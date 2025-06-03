@@ -1,0 +1,153 @@
+header:
+  stamp:
+    secs: 1701311174
+    nsecs: 585014820
+  seq: 64
+  frame_id: vehicle
+objects:
+- header:
+    stamp:
+      secs: 1701311174
+      nsecs: 584905147
+    seq: 0
+    frame_id: vehicle
+  data:
+  - header:
+      stamp:
+        secs: 1701311174
+        nsecs: 584745168
+      seq: 0
+      frame_id: vehicle
+    sensor_name:
+      data: perception_aggregator
+    position:
+      x: 59.596699146954116
+      y: -5.914258269753056
+      z: 0.0
+    velocity:
+      linear:
+        x: -31.319310653150282
+        y: -0.3174589917883335
+        z: 0.0
+      angular:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+    acceleration:
+      linear:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      angular:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+    size:
+      x: 0.5
+      y: 1.75
+      z: 0.5
+    heading:
+    - -3.1500000953674316
+    - -3.1500000953674316
+    road: 0
+    lane: 0
+    lane_perception: 0
+    type: 1
+    visibility: 0
+    lamp: 0
+  attribute:
+    header:
+      stamp:
+        secs: 0
+        nsecs: 0
+      seq: 0
+    pointer_pose:
+      position:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      orientation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        w: 0.0
+    confidence_pointer_pose: 0.0
+    gender: 0
+    confidence_gender: 0.0
+    age: 0
+    confidence_age: 0.0
+  id: 1
+  label: 1
+- header:
+    stamp:
+      secs: 1701311174
+      nsecs: 585006952
+    seq: 0
+    frame_id: vehicle
+  data:
+  - header:
+      stamp:
+        secs: 1701311174
+        nsecs: 584927082
+      seq: 0
+      frame_id: vehicle
+    sensor_name:
+      data: perception_aggregator
+    position:
+      x: 37.748250510747084
+      y: 24.257670610090507
+      z: 0.0
+    velocity:
+      linear:
+        x: 0.10581966392944464
+        y: -10.439770217716761
+        z: 0.0
+      angular:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+    acceleration:
+      linear:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      angular:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+    size:
+      x: 0.5
+      y: 1.75
+      z: 0.5
+    heading:
+    - -4.73199987411499
+    - -4.73199987411499
+    road: 0
+    lane: 0
+    lane_perception: 0
+    type: 1
+    visibility: 0
+    lamp: 0
+  attribute:
+    header:
+      stamp:
+        secs: 0
+        nsecs: 0
+      seq: 0
+    pointer_pose:
+      position:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      orientation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        w: 0.0
+    confidence_pointer_pose: 0.0
+    gender: 0
+    confidence_gender: 0.0
+    age: 0
+    confidence_age: 0.0
+  id: 2
+  label: 1

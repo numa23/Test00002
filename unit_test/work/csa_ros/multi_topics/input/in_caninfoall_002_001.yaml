@@ -1,0 +1,21 @@
+Header:
+  Stamp:
+    Sec: 0.0
+    Nsec: 0.0
+  Seq: 1
+Throttle: 0.0
+SteeringAngle: 0.0
+SteeringSpeed: 0.0
+Gear: 0
+TurnSignal: 0
+BrakeSwitch: 0
+VehicleSpeed: 0.0
+WheelSpeedFl: 0.0
+WheelSpeedFr: 0.0
+WheelSpeedRl: 0.0
+WheelSpeedRr: 0.0
+AccelerationLat: 0.0
+AccelerationLon: 0.0
+AngularYawRate: 0.0
+DriverBrakePressure: 0.0
+ControlBrakePressure: 0.0

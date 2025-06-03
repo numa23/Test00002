@@ -1,0 +1,86 @@
+
+---------------------
+ pass / fail summary 
+---------------------
+(ok / ng / total) = (7 / 0 / 7)
+
+-------------
+ result list 
+-------------
+(o):001 001 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:53:47, desc:gear is 0:NONE
+(o):001 002 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:54:18, desc:gear is 1:PARK
+(o):001 003 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:54:50, desc:gear is 2:REVERSE
+(o):001 004 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:55:22, desc:gear is 3:NEUTRAL
+(o):001 005 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:55:53, desc:gear is 4:DRIVE
+(o):001 006 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:56:25, desc:gear is 5:LOW
+(o):001 007 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:56:57, desc:gear is 10(out of range)
+
+---------------
+ result detail 
+---------------
+Expected result on the left, execution result on the right.
+Mark '*' for unmatch items.
+
+[(o):001 001 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:53:47, desc:gear is 0:NONE]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 002 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:54:18, desc:gear is 1:PARK]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 003 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:54:50, desc:gear is 2:REVERSE]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 004 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:55:22, desc:gear is 3:NEUTRAL]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 005 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:55:53, desc:gear is 4:DRIVE]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 006 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:56:25, desc:gear is 5:LOW]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 007 00, unmatch:0, version:1.0.0, exec:2023/11/07 14:56:57, desc:gear is 10(out of range)]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+

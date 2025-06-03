@@ -1,0 +1,173 @@
+#===============
+# for unit_test
+#===============
+
+#---------
+# 固有情報
+#---------
+
+def スクリプト名取得():
+    arglist = load('argv')
+    my_script_name = arglist[0]
+    return replace(my_script_name, '.txt', '')
+
+def スクリプトID取得():
+    スクリプト名 = スクリプト名取得()
+    分割リスト = split(スクリプト名, '_')
+    count = len(分割リスト)
+    結果 = ''
+    for index in range(count):
+        分割 = 分割リスト[index]
+        if isnumeric(分割):
+            break
+        分割 += '_'
+        結果 = 結果 + 分割
+    return replace(スクリプト名, 結果, '')
+
+#---------
+# パス取得
+#---------
+
+def ノードパス取得(ノード名):
+    my_path = getcwd()
+    ノードパス = my_path + '/' + ノード名 + '/'
+    return ノードパス
+
+def 作業ワークパス情報生成(ノード名):
+    # unit test開始時にcall必要
+    ノードパス = ノードパス取得(ノード名)
+    シナリオパス = f'{ノードパス}scenario/'
+    ターゲットパス = f'{ノードパス}target/'
+    設定パス = f'{ノードパス}param/'
+    設定fmtパス = f'{ノードパス}param/fmt/'
+    入力データパス = f'{ノードパス}input/'
+    入力データfmtパス = f'{ノードパス}input/fmt/'
+    出力データパス = f'{ノードパス}output/'
+    レポートパス = f'{ノードパス}report/'
+    レポートfmtパス = f'{ノードパス}report/fmt/'
+    比較格納パス = f'{レポートパス}analysis/'
+    ログパス = f'{ノードパス}log/'
+    save(f'{ノード名}.ノードパス', ノードパス)
+    save(f'{ノード名}.シナリオパス', シナリオパス)
+    save(f'{ノード名}.ターゲットパス', ターゲットパス)
+    save(f'{ノード名}.設定パス', 設定パス)
+    save(f'{ノード名}.設定fmtパス', 設定fmtパス)
+    save(f'{ノード名}.入力データパス', 入力データパス)
+    save(f'{ノード名}.入力データfmtパス', 入力データfmtパス)
+    save(f'{ノード名}.出力データパス', 出力データパス)
+    save(f'{ノード名}.レポートパス', レポートパス)
+    save(f'{ノード名}.レポートfmtパス', レポートfmtパス)
+    save(f'{ノード名}.比較格納パス', 比較格納パス)
+    save(f'{ノード名}.ログパス', ログパス)
+
+def ノードパスパス取得(ノード名):
+    return load(f'{ノード名}.ノードパス')
+
+def シナリオパス取得(ノード名):
+    return load(f'{ノード名}.シナリオパス')
+
+def ターゲットパス取得(ノード名):
+    return load(f'{ノード名}.ターゲットパス')
+
+def 設定パス取得(ノード名):
+    return load(f'{ノード名}.設定パス')
+
+def 設定fmtパス取得(ノード名):
+    return load(f'{ノード名}.設定fmtパス')
+
+def 入力データパス取得(ノード名):
+    return load(f'{ノード名}.入力データパス')
+
+def 入力データfmtパス取得(ノード名):
+    return load(f'{ノード名}.入力データfmtパス')
+
+def 出力データパス取得(ノード名):
+    return load(f'{ノード名}.出力データパス')
+
+def レポートパス取得(ノード名):
+    return load(f'{ノード名}.レポートパス')
+
+def レポートfmtパス取得(ノード名):
+    return load(f'{ノード名}.レポートfmtパス')
+
+def 比較格納パス取得(ノード名):
+    return load(f'{ノード名}.比較格納パス')
+
+def ログパス取得(ノード名):
+    return load(f'{ノード名}.ログパス')
+
+#---------------
+# ファイル名取得
+#---------------
+
+def 入力データファイル名取得(ノード名, yaml名, ID):
+    入力データパス = 入力データパス取得(ノード名)
+    return 入力データパス + f'{yaml名}_{ID}.yaml'
+
+def 出力データファイル名取得(ノード名, ID):
+    出力データパス = 出力データパス取得(ノード名)
+    return 出力データパス + f'out_{ノード名}_{ID}.yaml'
+
+def 想定結果ファイル名取得(ノード名, ID):
+    比較格納パス = 比較格納パス取得(ノード名)
+    return 比較格納パス + f'out_{ノード名}_{ID}_tobe.yaml'
+
+def 実行結果ファイル名取得(ノード名, ID):
+    比較格納パス = 比較格納パス取得(ノード名)
+    return 比較格納パス + f'out_{ノード名}_{ID}_asis.yaml'
+
+def レポートファイル名取得(ノード名, ID):
+    レポートパス = レポートパス取得(ノード名)
+    return レポートパス + f'rpt_{ノード名}_{ID}.yaml'
+
+#------------
+# yaml操作系
+#------------
+
+def 入力データ生成＆取得(ノード名, yaml名, ID):
+    入力データパス = 入力データパス取得(ノード名)
+    元ファイルyaml = 入力データパス + f'fmt/{yaml名}_fmt.yaml'
+    先ファイルyaml = 入力データパス + f'{yaml名}_{ID}.yaml'
+    copy_file(元ファイルyaml, 先ファイルyaml)
+    return read_yaml(先ファイルyaml)
+
+def 入力データ保存(ノード名, yaml名, ID, データ情報):
+    入力データパス = 入力データパス取得(ノード名)
+    ファイルyaml = 入力データパス + f'{yaml名}_{ID}.yaml'
+    write_yaml(ファイルyaml, データ情報)
+
+def 想定結果生成＆取得(ノード名, ID):
+    レポートfmtパス = レポートfmtパス取得(ノード名)
+    比較格納パス = 比較格納パス取得(ノード名)
+    元ファイルyaml = レポートfmtパス + f'out_{ノード名}_fmt.yaml'
+    先ファイルyaml = 比較格納パス + f'out_{ノード名}_{ID}_tobe.yaml'
+    copy_file(元ファイルyaml, 先ファイルyaml)
+    return read_yaml(先ファイルyaml)
+
+def 想定結果保存(ノード名, ID, データ情報):
+    比較格納パス = 比較格納パス取得(ノード名)
+    ファイルyaml = 比較格納パス + f'out_{ノード名}_{ID}_tobe.yaml'
+    write_yaml(ファイルyaml, データ情報)
+
+def 結果ファイルソート＆コピー(元ファイル名, 先ファイル名):
+    dict = read_yaml(元ファイル名)
+    write_sort_yaml(先ファイル名, dict)
+
+def yamlファイル表示(ファイル名):
+    dict = read_yaml(ファイル名)
+    print(dict)
+
+def ROS比較除外登録(除外リスト):
+    save('skip_comp', 除外リスト)
+
+def ROS結果比較(想定結果ファイル名, 実行結果ファイル名):
+    #結果ファイルソート(想定結果ファイル名)
+    #結果ファイルソート(実行結果ファイル名)
+    diff_result = get_diff_result(想定結果ファイル名, 実行結果ファイル名)
+    #print('ROS結果比較')
+    #print(diff_result)
+    return diff_result
+
+def ROS結果出力(結果ファイル名, 比較結果リスト):
+    disp_list(比較結果リスト)
+    write_list(結果ファイル名, 比較結果リスト)

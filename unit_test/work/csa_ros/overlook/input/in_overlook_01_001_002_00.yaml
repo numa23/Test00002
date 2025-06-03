@@ -1,0 +1,23 @@
+header: 
+  seq: 1
+  stamp: {secs: 1661990400, nsecs: 000000000}
+  frame_id: ''
+risks:
+- size: {x: 0.0, y: 0.0, z: 0.0}
+  velocity: {x: 0.0, y: 0.0, z: 0.0}
+  obj_id: 0
+  label: 0
+  type: 0
+  position: {x: 0.0, y: 0.0, z: 0.0}
+  heading: [0]
+  estimated_pos:
+  - {x: 0.0, y: 0.0, z: 0.0}
+  confidence: 0.0
+  distance: 0.0
+  mirror_assign_id: 0
+  side_assign_id: 0
+  assigned_areas: [false]
+  exclude_overlook_alert: True
+  allow_overlook_alert: False
+  attention: False
+  is_entered_area: false

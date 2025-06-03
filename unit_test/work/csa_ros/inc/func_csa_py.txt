@@ -1,0 +1,60 @@
+import func_ros_py
+
+#------------------
+# rospy.Subscriber
+#------------------
+def GazeEstimation投入(トピック名, トピックyaml):
+    #(トピック名 : 受信)
+    # '/honda_interface/gaze_estimation' : dmc_preprocess_node
+    ROSデータ投入(トピック名, 'honda_protocol_msgs/GazeEstimation', トピックyaml)
+
+def DynamicObjectInfoArray投入(トピック名, トピックyaml):
+    #(トピック名 : 受信)
+    # '/honda_interface/dynamic_object_info_array' : risk_preprocessor_node
+    ROSデータ投入(トピック名, 'honda_protocol_msgs/DynamicObjectInfoArray', トピックyaml)
+
+def CanInfoAll投入(トピック名, トピックyaml):
+    #(トピック名 : 受信)
+    # '/can/can_info_all' : area_assigner_node, looking_aside_node, attention_node, mode_selector_node, risk_area_node
+    # '/my_topic2' : multi_topics
+    ROSデータ投入(トピック名, 'honda_msgs/CanInfoAll', トピックyaml)
+
+def DriveMode投入(トピック名, トピックyaml):
+    #(トピック名 : 受信 <- 送信)
+    # '/risk_estimator/mode' : looking_aside_node <- mode_selector_node
+    ROSデータ投入(トピック名, 'csa_and_csa_intersection/DriveMode', トピックyaml)
+
+def Areas投入(トピック名, トピックyaml):
+    #(トピック名 : 受信 <- 送信)
+    # '/risk_estimator/areas' : area_assigner_node <- risk_area_node
+    # '/my_topic' : multi_topics
+    ROSデータ投入(トピック名, 'csa_and_csa_intersection/Areas', トピックyaml)
+
+def DmcPreprocessed投入(トピック名, トピックyaml):
+    #(トピック名 : 受信 <- 送信)
+    # '/risk_estimator/dmc_preprocessed' : looking_aside_node, seen_detector_node <- dmc_preprocess_node
+    ROSデータ投入(トピック名, 'csa_and_csa_intersection/DmcPreprocessed', トピックyaml)
+
+def Risks投入(トピック名, トピックyaml):
+    #(トピック名 : 受信 <- 送信)
+    # '/risk_estimator/preprocessed_risks' : area_assigner_node <- risk_preprocessor_node
+    # '/risk_estimator/attentioned_risks' : looking_aside_node, overlook_node <- attention_node
+    # '/risk_estimator/gazed_risks' : attention_node <- seen_detector_node
+    # '/risk_estimator/area_assigned_risks' : seen_detector_node <- area_assigner_node
+    ROSデータ投入(トピック名, 'csa_and_csa_intersection/Risks', トピックyaml)
+
+#-----------------
+# rospy.Publisher
+#-----------------
+def Publisherめも():
+    #(トピック名 : 送信 -> 受信)
+    # '/risk_estimator/mode' : mode_selector_node -> looking_aside_node
+    # '/risk_estimator/areas' : risk_area_node -> area_assigner_node
+    # '/risk_estimator/dmc_preprocessed' : dmc_preprocess_node -> looking_aside_node, seen_detector_node
+    # '/risk_estimator/preprocessed_risks' : risk_preprocessor_node -> area_assigner_node
+    # '/risk_estimator/attentioned_risks' : attention_node -> looking_aside_node, overlook_node
+    # '/risk_estimator/gazed_risks' : seen_detector_node -> attention_node
+    # '/risk_estimator/area_assigned_risks' : area_assigner_node -> seen_detector_node
+    # '/risk_estimator/overlook/risks' : overlook_node -> hmi_state_manager_node
+    # '/risk_estimator/looking_aside/looking_aside_result' : looking_aside_node -> hmi_state_manager_node
+    pass

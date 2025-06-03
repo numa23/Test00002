@@ -1,0 +1,49 @@
+import inc.func_ros
+#import inc.hogehoge
+
+#-----------------
+# 単体テスト雰囲気
+#-----------------
+
+#★実行制御とシナリオを分離したい
+
+#debug_print(4)
+
+disp_main_title('単体テスト雰囲気')
+
+引数取得()
+
+パス情報取得()
+
+#scenario_info = シナリオ情報取得()
+シナリオ情報取得()
+
+設定ファイル準備()
+入力ファイル準備()
+
+ROSターゲット情報取得()
+
+numリスト取得？()
+
+コマンド情報取得()
+
+ROS起動()
+
+#ROS設定('~/catkin_ws/src/XR5F_CSA_and_CSA_Intersection-develop/config/mode_selector.yaml /csa_and_csa_intersection/mode_selector')
+ROS設定('param/mode_selector.yaml', '/csa_and_csa_intersection/mode_selector')
+
+ROSターゲットNODE起動('csa_and_csa_intersection mode_selector_node.py')
+
+ROS出力監視('/risk_estimator/mode > echo.txt')
+
+#ROS入力データ投入('/can/can_info_all', 'honda_msgs/CanInfoAll', '~/catkin_ws/unit_test/work/mode_selector/input/in_mode_selector_01_001_001_00.yaml')
+ROS入力データ投入('/can/can_info_all', 'honda_msgs/CanInfoAll', 'input/in_mode_selector_01_001_001_00.yaml')
+
+#想定結果取得()
+#実行結果取得()
+
+#判定結果表示()
+
+sleep(10)
+
+ROS終了()

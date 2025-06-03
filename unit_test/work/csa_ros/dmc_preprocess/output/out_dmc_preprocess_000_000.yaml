@@ -1,0 +1,21 @@
+header: 
+  seq: 1
+  stamp: 
+    secs: 1701328977
+    nsecs: 538559401
+  frame_id: "gaze_estimation"
+x: 0.0027904705522491667
+y: -0.13996388434395457
+z: 0.39201314693321865
+gaze_pitch: -3.893252014788381
+gaze_yaw: 2.0676733158047282
+face_yaw: 0.9649187723795573
+face_pitch: 1.5639292001724243
+beam_x: 0.32452029830265317
+beam_y: 0.03527149292114068
+beam_z: -0.06748043336636168
+gaze_estimation_success: True
+gaze_face_state: 0
+look_direction: 2
+---
+shutdown request: user request

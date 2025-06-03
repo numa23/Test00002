@@ -1,0 +1,28 @@
+def ROSフォルダ指定(パス名):
+    pass
+
+def ROS起動():
+    disp_sub_title('ROS起動')
+    roscore()
+
+def ROS設定ファイル読込(param, namespace):
+    rosparam_load(param, namespace)
+
+def ROSノード起動(ノード名):
+    disp_sub_title('ROSノード起動:' + ノード名)
+    rosrun(ノード名)
+
+def ROSノード終了(ノード名):
+    disp_sub_title('ROSノード終了:' + ノード名)
+    roskill()
+
+def ROSデータ投入(トピック名, トピック型, inトピックyaml):
+    disp_sub_title('ROSデータ投入')
+    rostopic_pub(トピック名, トピック型, inトピックyaml)
+
+def ROS結果取得準備(トピック名, outトピックyaml):
+    disp_sub_title('ROS結果取得準備')
+    rostopic_echo(トピック名)
+
+def ROS結果取得(トピック名, outトピックyaml):
+    pass

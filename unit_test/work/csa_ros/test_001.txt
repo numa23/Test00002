@@ -1,0 +1,9 @@
+data = ['','','']
+data[0] = 'abc'
+data[1] = 'xyz'
+print(data)
+
+#NG
+#data1[2] = []
+#data1[0]　= 'A'
+#data1[1]　= 'B'

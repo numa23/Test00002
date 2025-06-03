@@ -1,0 +1,10 @@
+rosparam:
+  param_01: 'load param/mode_selector.yaml /csa_and_csa_intersection/mode_selector'
+
+rosrun:
+  rosrun_01: 'csa_and_csa_intersection mode_selector_node.py'
+
+rostopic:
+  echo_01: '/risk_estimator/mode'
+  pub_01: '/can/can_info_all honda_msgs/CanInfoAll'
+  pub_02: '/can/can_info_all honda_msgs/CanInfoAll'

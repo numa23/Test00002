@@ -1,0 +1,9 @@
+header: 
+  seq: 2
+  stamp: 
+    secs: 1702607847
+    nsecs: 233545541
+  frame_id: "vehicle"
+alert_enable: False
+---
+shutdown request: user request

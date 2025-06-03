@@ -1,0 +1,25 @@
+header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+risks:
+- size: {x: 0.0, y: 0.0, z: 0.0}
+  velocity: {x: 0.0, y: 0.0, z: 0.0}
+  obj_id: 0
+  label: 0
+  type: 0
+  position: {x: 0.0, y: 0.0, z: 0.0}
+  heading: [0]
+  estimated_pos:
+  - {x: 0.0, y: 0.0, z: 0.0}
+  confidence: 0.0
+  distance: 0.0
+  mirror_assign_id: 0
+  side_assign_id: 0
+  assigned_areas: [false]
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  attention: false
+  is_entered_area: false

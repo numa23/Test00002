@@ -1,0 +1,57 @@
+header:
+  frame_id: ''
+  seq: 1
+  stamp:
+    nsecs: 0
+    secs: 1661990400
+risks:
+- allow_looking_aside_alert: false
+  allow_overlook_alert: false
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  attention: true
+  confidence: 1.0
+  distance: 0.0
+  estimated_pos:
+  - x: 0.0
+    y: 0.0
+    z: 0.0
+  exclude_looking_aside_alert: false
+  exclude_overlook_alert: false
+  has_seen: false
+  heading:
+  - 0.0
+  horizontal_is_invade: false
+  is_entered_area: false
+  label: 0
+  looking_aside_alert: false
+  mirror_assign_id: 0
+  obj_id: 0
+  occ: false
+  overlook_alert: false
+  position:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  recent_has_seen_probability: []
+  side_assign_id: 0
+  size:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  type: 0
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0

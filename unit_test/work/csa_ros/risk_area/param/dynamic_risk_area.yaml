@@ -1,0 +1,83 @@
+wheel2steer_gear_ratio: 16.3896
+calc_area_resolution: 0.2  # meters
+max_wheel_deg: 32.9477229462586  # degrees
+min_vehicle_speed: 1  # caninfoall.vehicle_speed (mps)
+car_model:
+  length: 4.945
+  width: 1.850
+  height: 1.450
+  wheel_base: 2.775
+  wheel_diam: 0.6706
+  wheel_width: 0.235
+
+publish_hz: 20
+
+steer_reduce:
+    threshold_right: 20  # deg
+    threshold_left: -45  # deg
+    right_buffer: 10  # deg
+    left_buffer: 10  # deg
+
+# formula memo
+# rate_from_speed:  (math.tanh(mps/p2)/math.tanh(mps/p1)-1)    parameter p1, p2 [p1>p2]
+# rate_from_brake:  (1-min(brake,threshold)/threshold)      parameter threshold
+# extend_meters:    15
+
+area_support_input:
+    steer_backward_gain: -2.3
+    steer_forward_gain: -0.007
+
+front_areas: {
+    apply_steer_acceleration: true,
+    start_range: 3.8875,
+    min_end_range: 8,
+    max_end_range: 71.7,
+    range_distance_formula: "(mps*4.3) * (((1-math.tanh(pow(math.radians(steer)*0.7,2)))*0.4+0.6)*min(max(mps*0.72-5,0),1)-min(max(mps*0.72-5,0),1)+1) + (math.tanh(mps/1)/math.tanh(mps/2)-1) * (1-min(brake,1000)/1000) * 15",
+    range_width: 1.850,
+    range_side_offset: [0]
+}
+
+front_pred_areas: {
+    apply_steer_acceleration: true,
+    start_range: 8,
+    min_end_range: 0,
+    max_end_range: 71.7,
+    range_distance_formula: "(mps*4.3) * (((1-math.tanh(pow(math.radians(steer)*0.7,2)))*0.4+0.6)*min(max(mps*0.72-5,0),1)-min(max(mps*0.72-5,0),1)+1) + (math.tanh(mps/1)/math.tanh(mps/2)-1) * (1-min(brake,1000)/1000) * 15",
+    range_width: 1.850,
+    range_side_offset: [0]
+}
+
+frontside_areas: {
+    apply_steer_acceleration: true,
+    start_range: 3.8875,
+    min_end_range: 8,
+    max_end_range: 71.7,
+    range_distance_formula: "(mps*4.3) * (((1-math.tanh(pow(math.radians(steer)*0.7,2)))*0.4+0.6)*min(max(mps*0.72-5,0),1)-min(max(mps*0.72-5,0),1)+1) + (math.tanh(mps/1)/math.tanh(mps/2)-1) * (1-min(brake,1000)/1000) * 15",
+    range_width: 1.0,
+    range_side_offset: [1.425, -1.425]
+}
+
+frontside_pred_areas: {
+    apply_steer_acceleration: true,
+    start_range: 8,
+    min_end_range: 0,
+    max_end_range: 71.7,
+    range_distance_formula: "(mps*4.3) * (((1-math.tanh(pow(math.radians(steer)*0.7,2)))*0.4+0.6)*min(max(mps*0.72-5,0),1)-min(max(mps*0.72-5,0),1)+1) + (math.tanh(mps/1)/math.tanh(mps/2)-1) * (1-min(brake,1000)/1000) * 15",
+    range_width: 1.0,
+    range_side_offset: [1.425, -1.425]
+}
+
+frontright_ex_areas: {
+    apply_steer_acceleration: true,
+    start_range: 3.8875,
+    min_end_range: 0,
+    max_end_range: 71.7,
+    range_distance_formula: "(mps*4.3) * (((1-math.tanh(pow(math.radians(steer)*0.7,2)))*0.4+0.6)*min(max(mps*0.72-5,0),1)-min(max(mps*0.72-5,0),1)+1) + (math.tanh(mps/1)/math.tanh(mps/2)-1) * (1-min(brake,1000)/1000) * 15",
+    range_width: 3,
+    range_side_offset: [-2.425]
+}
+
+low_pass_filter: {
+    cut_off_freq: 10,
+    sampling_freq: 100
+}

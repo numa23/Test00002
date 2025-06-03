@@ -1,0 +1,137 @@
+# use face direction as gaze direction
+use_face_direction: false
+
+mirror:
+  left:  # [radian]
+    x: 0.58
+    y: +1.0
+    z: 1.00
+  right:
+    x: 0.61
+    y: -0.97
+    z: 1.00
+  w: 0.20
+  h: 0.14
+
+# gaze/face flip-flop switch
+# set the original direction for gaze and face
+gaze_direction: 
+  yaw: clockwise  # left is + when clockwise direction, -1 for clock direction
+  pitch: positive_up
+face_direction: 
+  yaw: clock
+  pitch: negative_up
+
+# factor to change the direction to clockwise
+direction_factor:
+  clockwise: 1
+  clock: -1
+  positive_up: 1
+  negative_up: -1
+
+# direction_threshold_yaw:
+# high confidence gaze is (-35~60)
+# low confidence gaze is (-35~ -85)and(60~110)
+forward_threshold_yaw:
+  straight:
+    min: -5.0
+    max: +5.0
+  left:
+    min: -35.0
+    max: +110.0
+  right:
+    min: -85.0
+    max: +60.0
+
+# for the flip-flop axis
+# clock_direction_threshold_yaw:
+#   straight:
+#     min: -60.0
+#     max: +35.0 # tuned by misako 20220722
+#   left:
+#     min: -110.0
+#     # max: +60.0
+#     max: +35.0 # tuned by misako 20220722
+#   right:
+#     min: -60.0
+#     # max: +110.0
+#     max: +85.0 # tuned by misako 20220722
+
+# face confidence threshold 
+face_confidence_threshold:
+  yaw:
+    high:
+      min: -55.0
+      max: +100.0
+    low:
+      min: -85.0
+      max: +110.0
+  pitch:
+    high:
+      min: -30.0
+      max: +30.0
+    low:
+      min: -60.0
+      max: +60.0
+
+# gaze confidence threshold 
+gaze_confidence_threshold:
+  yaw:
+    high:
+      min: -45.0
+      max: +90.0
+    low:
+      min: -85.0
+      max: +110.0
+  pitch:
+    high:
+      min: -30.0
+      max: +30.0
+    low:
+      min: -60.0
+      max: +60.0
+
+probability_max_history: 5
+threshold_probability: 0.8
+
+# ignore pitch(theta) and use only yaw-direction
+ignore_gaze_pitch: false
+prob_peak_value: 0.8 # peak value of gaussian probability
+prob_side_value: 0.8 # constant value when driver looking side-area(left/right)
+
+# visual_range of recognition distance (m)
+cylinder_visual_range: True
+cylinder_visual_ratio : 1.325
+# check has_seen flag at least 3 frame
+seen_with_three_frame: True
+seen_period: 1
+period_threshold_probability: 0.8
+visual_range_switch_dis: 12.4 # 10m ahead from car center 
+
+face_direction_offset: # unit deg
+  yaw: -35.0  # yaw +: clockwise-shift, -: counterclockwise-shift:
+  pitch: -3.0 # pitch +:up -:down
+
+cut_off_frequency: 10 # fps
+sampling_frequency: 30 # fps
+
+gaze_not_detection_threshold: 300 # 30sec since 1 count is 0.1s
+
+# side_gaze definition
+side_face_pitch_threshold: # up +, down -
+  max: 30
+  min: -30
+side_gaze_pitch_threshold: # up +, down -
+  max: 30
+  min: -30
+side_face_ang_vel_ref: 10.0 # per frame(30fps) abs value for left&right 
+
+gaussian_params_mirror:
+  pitch_sigma: 2.0  # unit: degrees
+  yaw_sigma: 2.0  # unit: degrees
+gaussian_params_corn:
+  pitch_sigma: 8.0  # unit: degrees
+  yaw_sigma: 32.0  # unit: degrees
+gaussian_params_cylinder:
+  pitch_sigma: 8.0  # unit: meter
+  yaw_sigma: 8.0  # unit: meter

@@ -1,0 +1,2 @@
+dict = read_yaml('mode_selector/param/mode_selector.yaml')
+print(dict)

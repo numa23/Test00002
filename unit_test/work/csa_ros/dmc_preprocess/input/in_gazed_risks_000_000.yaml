@@ -1,0 +1,31 @@
+header:
+  stamp:
+    secs: 1701328977
+    nsecs: 538559401
+  seq: 496782
+  frame_id: gaze_estimation
+left_gaze_vector:
+  x: 0.9735612757216698
+  y: 0.10581265932237925
+  z: -0.2024404197345992
+right_gaze_vector:
+  x: 0.9735605140942492
+  y: 0.10581629820446484
+  z: -0.20244218046357096
+left_eye_position:
+  x: 0.009727508117251604
+  y: -0.3870341992668582
+  z: 1.1768270551631492
+right_eye_position:
+  x: 0.0070153151962433985
+  y: -0.45274910679686914
+  z: 1.1752518264361627
+camera_timestamp: 1701328977478573056
+gaze_estimation_success: true
+left_eye_openness: 0.9997978210449219
+right_eye_openness: 0.9997838139533997
+left_eye_confidence: 0.9998624920845032
+right_eye_confidence: 0.9998366236686707
+headpose_yaw_degree: 32.10524368286133
+headpose_pitch_degree: -1.691787600517273
+headpose_roll_degree: -0.3787635564804077

@@ -1,0 +1,20 @@
+header: 
+  seq: 2
+  stamp: {secs: 1661990401, nsecs: 000000000}
+  frame_id: ''
+throttle: 0.0
+steering_angle: 0.0
+steering_speed: 0.0
+gear: 4
+turn_signal: 0
+brake_switch: 0
+vehicle_speed: 0.0
+wheel_speed_fl: 0.0
+wheel_speed_fr: 0.0
+wheel_speed_rl: 0.0
+wheel_speed_rr: 0.0
+acceleration_lat: 0.0
+acceleration_lon: 0.0
+angular_yaw_rate: 0.0
+driver_brake_pressure: 2000.0
+control_brake_pressure: 0.0

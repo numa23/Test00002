@@ -1,0 +1,4 @@
+def oppeke():
+    print('oppeke2!!')
+
+oppeke()

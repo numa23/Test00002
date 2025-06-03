@@ -1,0 +1,22 @@
+header:
+  stamp:
+    secs: 1702885485
+    nsecs: 852543592
+  seq: 2681
+  frame_id: vehicle
+throttle: 0.0
+steering_angle: -0.0
+steering_speed: -0.0
+gear: 4
+turn_signal: 0
+brake_switch: 0
+vehicle_speed: 8.333333333333334
+wheel_speed_fl: 8.333333333333334
+wheel_speed_fr: 8.333333333333334
+wheel_speed_rl: 8.333333333333334
+wheel_speed_rr: 8.333333333333334
+acceleration_lat: 0.0
+acceleration_lon: 0.0
+angular_yaw_rate: 0.0
+driver_brake_pressure: 0.0
+control_brake_pressure: 0.0

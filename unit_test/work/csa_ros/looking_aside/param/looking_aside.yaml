@@ -1,0 +1,64 @@
+gaze_check_period: 3.0
+face_check_period: 3.0
+face_early_check_period: 1.6
+gaze_early_check_period: 1.6
+
+gaze_front_window_roi:
+  yaw_min: -30
+  yaw_max: 55
+  pitch_min: -12
+  pitch_max: 15
+
+gaze_left_window_roi:
+  yaw_min: 60
+  yaw_max: 80
+  pitch_min: -15
+  pitch_max: 10
+
+gaze_right_window_roi:
+  yaw_min: -60
+  yaw_max: -45
+  pitch_min: -20
+  pitch_max: 20
+
+gaze_left_pillar_roi:
+  yaw_min: 55
+  yaw_max: 60
+  pitch_min: -15
+  pitch_max: 15
+
+gaze_right_pillar_roi:
+  yaw_min: -45
+  yaw_max: -30
+  pitch_min: -15
+  pitch_max: 15
+
+face_front_window_roi:
+  yaw_min: -30
+  yaw_max: 55
+  pitch_min: -7
+  pitch_max: 30
+
+face_left_window_roi:
+  yaw_min: 60
+  yaw_max: 80
+  pitch_min: -5
+  pitch_max: 15
+
+face_right_window_roi:
+  yaw_min: -60
+  yaw_max: -45
+  pitch_min: -15
+  pitch_max: 15
+
+face_left_pillar_roi:
+  yaw_min: 55
+  yaw_max: 60
+  pitch_min: -5
+  pitch_max: 15
+
+face_right_pillar_roi:
+  yaw_min: -45
+  yaw_max: -30
+  pitch_min: -15
+  pitch_max: 10

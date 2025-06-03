@@ -1,0 +1,76 @@
+
+---------------------
+ pass / fail summary 
+---------------------
+(ok / ng / total) = (1 / 0 / 1)
+
+-------------
+ result list 
+-------------
+(o):001 017 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:54:49, desc:attention:False,confidence:0.9 & allow:True,exclude:False
+
+---------------
+ result detail 
+---------------
+Expected result on the left, execution result on the right.
+Mark '*' for unmatch items.
+
+[(o):001 017 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:54:49, desc:attention:False,confidence:0.9 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.8                                                 confidence: 0.8
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: true                                            overlook_alert: true
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+

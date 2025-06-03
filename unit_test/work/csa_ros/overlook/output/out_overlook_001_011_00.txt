@@ -1,0 +1,48 @@
+header: 
+  seq: 1
+  stamp: 
+    secs: 1661990400
+    nsecs:         0
+  frame_id: ''
+risks: 
+  - 
+    size: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    velocity: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    obj_id: 0
+    label: 0
+    type: 0
+    position: 
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    heading: [0.0]
+    estimated_pos: 
+      - 
+        x: 0.0
+        y: 0.0
+        z: 0.0
+    confidence: 0.0
+    distance: 0.0
+    mirror_assign_id: 0
+    side_assign_id: 0
+    assigned_areas: [False, False, False, False, False, False, False, False, False, False, False, False]
+    exclude_overlook_alert: False
+    allow_overlook_alert: True
+    exclude_looking_aside_alert: False
+    allow_looking_aside_alert: False
+    has_seen: False
+    recent_has_seen_probability: []
+    attention: True
+    overlook_alert: False
+    looking_aside_alert: False
+    horizontal_is_invade: False
+    occ: False
+    is_entered_area: False
+---
+shutdown request: user request

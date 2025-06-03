@@ -1,0 +1,19 @@
+header:
+  stamp:
+    secs: 1701840127
+    nsecs: 933851480
+  seq: 2195
+  frame_id: vehicle
+x: -0.049999999999999996
+y: -0.24999999999999997
+z: 1.4999999999999998
+gaze_pitch: -5.0575173368764255e-77
+gaze_yaw: 4.4508544255881524e-82
+face_yaw: 0.0
+face_pitch: 0.0
+beam_x: 0.9999999999999999
+beam_y: 7.048148981103355e-84
+beam_z: -8.593521347737246e-79
+gaze_estimation_success: true
+gaze_face_state: 0
+look_direction: 1

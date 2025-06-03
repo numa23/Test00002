@@ -1,0 +1,57 @@
+header:
+  stamp:
+    secs: 1702607847
+    nsecs: 223625183
+  seq: 533
+  frame_id: vehicle
+risks:
+- size:
+    x: 0.3
+    y: 0.5
+    z: 1.7
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 25.36205095821816
+    y: -0.22665214287518615
+    z: 0.0
+  obj_id: 200
+  label: 3
+  type: 1
+  heading: [-4.739999771118164]
+  confidence: 0.9241418199787566
+  distance: 25.363063695088663
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: true
+  recent_has_seen_probability:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  attention: true
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false

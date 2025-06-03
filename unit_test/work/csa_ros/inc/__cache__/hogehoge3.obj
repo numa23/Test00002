@@ -1,0 +1,1 @@
+['stmts', ['stmt', ['func_def', 'oppeke', [], ['stmts', ['stmt', ['func_call', 'print', ['str', 'oppeke!!']]]]]]]

@@ -1,0 +1,116 @@
+
+---------------------
+ pass / fail summary 
+---------------------
+(ok / ng / total) = (10 / 0 / 10)
+
+-------------
+ result list 
+-------------
+(o):003 001 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:04:50, desc:prev alert_enable:False & vehicle_speed:0
+(o):003 002 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:05:25, desc:prev alert_enable:False & vehicle_speed:1
+(o):003 003 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:06:00, desc:prev alert_enable:False & vehicle_speed:2
+(o):003 004 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:06:34, desc:prev alert_enable:False & vehicle_speed:3
+(o):003 005 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:07:09, desc:prev alert_enable:False & vehicle_speed:4
+(o):003 006 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:07:43, desc:prev alert_enable:True & vehicle_speed:0
+(o):003 007 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:08:18, desc:prev alert_enable:True & vehicle_speed:1
+(o):003 008 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:08:53, desc:prev alert_enable:True & vehicle_speed:2
+(o):003 009 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:09:27, desc:prev alert_enable:True & vehicle_speed:3
+(o):003 010 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:10:02, desc:prev alert_enable:True & vehicle_speed:4
+
+---------------
+ result detail 
+---------------
+Expected result on the left, execution result on the right.
+Mark '*' for unmatch items.
+
+[(o):003 001 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:04:50, desc:prev alert_enable:False & vehicle_speed:0]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 002 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:05:25, desc:prev alert_enable:False & vehicle_speed:1]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 003 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:06:00, desc:prev alert_enable:False & vehicle_speed:2]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 004 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:06:34, desc:prev alert_enable:False & vehicle_speed:3]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 005 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:07:09, desc:prev alert_enable:False & vehicle_speed:4]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 006 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:07:43, desc:prev alert_enable:True & vehicle_speed:0]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 007 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:08:18, desc:prev alert_enable:True & vehicle_speed:1]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 008 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:08:53, desc:prev alert_enable:True & vehicle_speed:2]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 009 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:09:27, desc:prev alert_enable:True & vehicle_speed:3]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 010 00, unmatch:0, version:1.0.0, exec:2023/11/08 14:10:02, desc:prev alert_enable:True & vehicle_speed:4]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+

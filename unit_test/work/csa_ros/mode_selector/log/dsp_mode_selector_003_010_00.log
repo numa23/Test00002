@@ -1,0 +1,38 @@
+----------------------------------------------------------
+ P010(003_010_00):prev alert_enable:True & vehicle_speed:4
+----------------------------------------------------------
+version:1.0.0
+md5sum:a76d8db685d1e2a6429b471eb935d5cb
+date_time:2023/12/05 09:57:05
+mode_selector/param/fmt/mode_selector_fmt.yaml
+exec2:cp mode_selector/param/mode_selector.yaml mode_selector/param/mode_selector_003_010_00.yaml
+mode_selector/input/fmt/in_mode_selector_01_fmt.yaml
+exec2:cp mode_selector/input/in_mode_selector_01.yaml mode_selector/input/in_mode_selector_01_003_010_00.yaml
+mode_selector/input/fmt/in_mode_selector_02_fmt.yaml
+exec2:cp mode_selector/input/in_mode_selector_02.yaml mode_selector/input/in_mode_selector_02_003_010_00.yaml
+input:{'$BRAKE_THRESHOLD$': '1000', '$SPEED_THRESHOLD_HIGH$': '3', '$SPEED_THRESHOLD_LOW$': '1'}
+exec:rosnode list
+exec2:pkill ros
+exec2:roscore &
+exec:pgrep -l roscore
+exec:pgrep -l rosmaster
+exec:pgrep -l roscore
+exec:pgrep -l rosmaster
+exec:pgrep -l rosout
+exec2:rosparam load mode_selector/param/mode_selector.yaml /csa_and_csa_intersection/mode_selector
+exec2:rosrun csa_and_csa_intersection mode_selector_node.py > mode_selector/log/run_mode_selector_003_010_00.log 2>&1
+exec2:rostopic echo /risk_estimator/mode > mode_selector/output/out_mode_selector_003_010_00.txt
+exec3:rostopic pub /can/can_info_all honda_msgs/CanInfoAll -1 -f mode_selector/input/in_mode_selector_01_003_010_00.yaml
+sleep:3.0(sec)
+exec3:rostopic pub /can/can_info_all honda_msgs/CanInfoAll -1 -f mode_selector/input/in_mode_selector_02_003_010_00.yaml
+exec:cat mode_selector/output/out_mode_selector_003_010_00.txt
+exec:diff -u mode_selector/report/analysis/out_mode_selector_003_010_00_tobe.yaml mode_selector/report/analysis/out_mode_selector_003_010_00_asis.yaml
+result:start
+result:end
+judge:(o) mode_selector 003 010 00
+exec:rosnode list
+exec:rosnode kill /mode_selector
+exec:rosnode kill /rosout
+exec:rosnode kill /rostopic_208763_1701737840138
+exec:rosnode kill /rostopic_208932_1701737838204
+exec2:pkill ros
