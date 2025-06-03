@@ -1,0 +1,5 @@
+path:
+  excel_path:  'C:\Users\v-numata8413\Documents\work_hnd\svn\etc\ヒヤリハット解析'
+  #excel_path:  '..\launcher\launcher.yaml'
+message:
+  msg_save_ng:  'エクセルの保存に失敗しました。確認してください。'

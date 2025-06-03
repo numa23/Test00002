@@ -1,0 +1,130 @@
+path:
+  svn_path:  'svn_path.yaml'
+
+speed_range:
+  '0': '0-30km/h'
+  '1': '30-60km/h'
+  '2': '30-90km/h'
+  '3': '90km/h<'
+
+sec_range:
+  '0': '0-0.5 sec'
+  '1': '0.5-1.5 sec'
+  '2': '1.5-2.8 sec'
+  '3': '2.8-3.6 sec'
+  '4': '3.6-4.3 sec'
+  '5': '4.3-6.0 sec'
+  '6': '6.0 < sec'
+
+double_input:
+  '$事故類型$': '事故類型(一般道路),事故類型(高速道路)'
+
+convert_table:
+  ID:
+    src: 'No.'
+    type: 'pass'
+  AMP_Case:
+    src: '事象ID'
+    type: 'copy'
+  IncidentCode:
+    src: 'インシデントコード'
+    type: 'copy'
+  RoadTypeFIN:
+    src: '道路種別'
+    type: 'value'
+  RoadTypeCodeFIN:
+    src: '道路種別'
+    type: 'code'
+  PrimaryResponsibleActorType:
+    src: '第１当事者(プライマリー)'
+    type: 'value'
+  PRATCode:
+    src: '第１当事者(プライマリー)'
+    type: 'code'
+  SecondaryResponsibleActorType:
+    src: '第２当事者(セカンダリー)'
+    type: 'value'
+  SRATCode:
+    src: '第２当事者(セカンダリー)'
+    type: 'code'
+  IncidentType:
+    src: '$事故類型$'
+    type: 'value'
+  ITCode:
+    src: '$事故類型$'
+    type: 'code'
+  RoadStructure:
+    src: '道路構造'
+    type: 'value'
+  RSCode:
+    src: '道路構造'
+    type: 'code'
+  DrivingMode:
+    src: '行動類型'
+    type: 'value'
+  DMCode:
+    src: '行動類型'
+    type: 'code'
+  NearCrashDirection:
+    src: 'ヒヤリハット方向'
+    type: 'value'
+  NCDCode:
+    src: 'ヒヤリハット方向'
+    type: 'code'
+  RelativeVelocityBin:
+    src: '相対速度(km/h)'
+    type: 'speed_range'
+  DayNight:
+    src: '日中/  夜間'
+    type: 'copy'
+  Weather:
+    src: '天候'
+    type: 'copy'
+  RoadCondition:
+    src: '路面状況'
+    type: 'copy'
+  RoadGeometry:
+    src: '道路形状'
+    type: 'copy'
+  ReferenceSpeedKPH:
+    src: '速度(km/h)'
+    type: 'round'
+  TimeHeadwayBin:
+    src: 'THW'
+    type: 'sec_range'
+  TimeHeadwayValue:
+    src: 'THW'
+    type: 'round'
+  TTCEstimateBin:
+    src: 'TTC'
+    type: 'sec_range'
+  TTCEstimateValue:
+    src: 'TTC'
+    type: 'round'
+  DistanceCB:
+    src: '距離'
+    type: 'round'
+  LaneLine:
+    src: 'レーンライン'
+    type: 'copy'
+  PrincipalOperatorFailure:
+    src: '主なヒューマンエラー'
+    type: 'copy'
+  Notes:
+    src: '備考'
+    type: 'copy'
+  update:
+    src: '更新'
+    type: 'pass'
+  担当者:
+    src: '担当者'
+    type: 'copy'
+  完了日:
+    src: '完了日'
+    type: 'copy'
+  チェック担当者:
+    src: 'チェック担当者'
+    type: 'copy'
+  チェック完了日:
+    src: 'チェック完了日'
+    type: 'copy'
