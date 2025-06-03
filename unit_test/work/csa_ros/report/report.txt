@@ -1,0 +1,7 @@
+alert_enable: false                                           * alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400

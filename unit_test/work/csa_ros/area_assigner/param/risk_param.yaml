@@ -1,0 +1,28 @@
+estimate_time: 4.1
+low_speed_threshold: 1  # kph
+high_speed_threshold: 90 # kph
+risk_max_count: 5
+
+stop_threshold: 1
+
+low_pass_filter:
+  VEHICLE:
+    cut_off_freq: 5
+    sampling_freq: 10
+  BIKE:
+    cut_off_freq: 5
+    sampling_freq: 10
+  PEDESTRIAN:
+    cut_off_freq: 10
+    sampling_freq: 10
+  UNKNOWN:
+    cut_off_freq: 5
+    sampling_freq: 10
+
+speed_limit: # kph
+  VEHICLE: 120
+  BIKE: 120
+  PEDESTRIAN: 20
+  UNKNOWN: 120
+
+

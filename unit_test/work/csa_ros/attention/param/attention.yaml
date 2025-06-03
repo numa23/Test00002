@@ -1,0 +1,28 @@
+clustering_threshold:
+  VEHICLE:
+    joints: 3
+    distance: 4.5
+    radius: 2.5
+    offset: 0.25
+  BIKE:
+    joints: 2
+    distance: 3.0
+    radius: 1
+    offset: 0.0
+  PEDESTRIAN:
+    joints: 1
+    distance: 2.8
+    radius: 0.5
+  UNKNOWN:
+    joints: 1
+    distance: 2.0
+    radius: 0.5
+
+clustering_y_threshold: 2
+ttc_deque_size: 10
+ttc_realert_gradient:
+  VEHICLE: 0.5
+  BIKE: 0.5
+  PEDESTRIAN: 0.5
+
+loop_upper_limit: 20 # upper_limit for clustering check loop 

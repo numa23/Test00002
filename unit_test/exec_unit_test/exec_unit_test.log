@@ -1,0 +1,2042 @@
+2024-02-28 20:26:16.790808
+[input]
+#========================================
+# 単体テストスクリプト(multi_topics編集版)
+#========================================
+#import inc.unit_test_sim
+import inc.unit_test
+
+#------------
+# テスト準備
+#------------
+#work_path = 'C:\Users\csa\Documents\MATLAB\unit_test\csa_unittest'
+path_info = read_yaml('path_info.yaml')
+work_path = path_info.path.work_path
+node_name = 'multi_topics'
+print(work_path)
+作業ワークパス情報生成(node_name)
+スクリプトID = スクリプトID取得()
+print(f'スクリプトID:{スクリプトID}')
+
+#-------------
+# テストケース
+#-------------
+#[インプット]
+入力_alert_enable = False
+入力_Gear = 0
+
+#[想定結果]
+想定結果_alert_enable = False
+
+disp_sub_title('テストケース')
+print('[インプット]')
+print(f'alert_enable:{入力_alert_enable}')
+print(f'Gear:{入力_Gear}')
+print('[想定結果]')
+print(f'alert_enable:{想定結果_alert_enable}')
+
+#---------------
+# 入力データ準備
+#---------------
+modeデータ情報 = 入力データ生成＆取得(node_name, 'in_mode', スクリプトID)
+modeデータ情報.alert_enable = 入力_alert_enable
+入力データ保存(node_name, 'in_mode', スクリプトID, modeデータ情報)
+canデータ情報 = 入力データ生成＆取得(node_name, 'in_caninfoall', スクリプトID)
+canデータ情報.Gear = 入力_Gear
+入力データ保存(node_name, 'in_caninfoall', スクリプトID, canデータ情報)
+
+#-------------------
+# 入出力データyaml名
+#-------------------
+canデータyaml = 入力データファイル名取得(node_name, 'in_caninfoall', スクリプトID)
+modeデータyaml = 入力データファイル名取得(node_name, 'in_mode', スクリプトID)
+出力データyaml = 出力データファイル名取得(node_name, スクリプトID)
+
+#---------------
+# 単体テスト実行
+#---------------
+ROSフォルダ指定(work_path)
+ROSノード起動(node_name)
+CanInfoAll投入('/my_topic2', canデータyaml)
+DriveMode投入('/my_topic', modeデータyaml)
+ROS結果取得('/my_topic3', 出力データyaml)
+ROSノード終了(node_name)
+
+#-------------
+# 実行結果判定
+#-------------
+想定結果 = 想定結果生成＆取得(node_name, スクリプトID)
+想定結果.alert_enable = 想定結果_alert_enable
+想定結果保存(node_name, スクリプトID, 想定結果)
+想定結果yaml = 想定結果ファイル名取得(node_name, スクリプトID)
+実行結果yaml = 実行結果ファイル名取得(node_name, スクリプトID)
+結果ファイルソート＆コピー(出力データyaml, 実行結果yaml)
+ROS比較除外登録([' nsec:', ' sec:'])
+比較結果 = ROS結果比較(想定結果yaml, 実行結果yaml)
+disp_sub_title('ROS比較結果')
+disp_list(比較結果)
+レポートファイル名 = レポートファイル名取得(node_name, スクリプトID)
+write_list(レポートファイル名, 比較結果)
+
+[Lexer]
+type:STMTS,literal:stmts
+type:STMT,literal:stmt
+type:IMPORT,literal:import
+type:VAR,literal:inc
+type:.,literal:.
+type:VAR,literal:unit_test
+type:STMT,literal:stmt
+type:VAR,literal:path_info
+type:ASSIGN,literal:=
+type:VAR,literal:read_yaml
+type:LPAREN,literal:(
+type:STR,literal:path_info.yaml
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:work_path
+type:ASSIGN,literal:=
+type:VAR,literal:path_info
+type:.,literal:.
+type:VAR,literal:path
+type:.,literal:.
+type:VAR,literal:work_path
+type:STMT,literal:stmt
+type:VAR,literal:node_name
+type:ASSIGN,literal:=
+type:STR,literal:multi_topics
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:VAR,literal:work_path
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:作業ワークパス情報生成
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:スクリプトID
+type:ASSIGN,literal:=
+type:VAR,literal:スクリプトID取得
+type:LPAREN,literal:(
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:STR,literal:スクリプトID:
+type:OPE,literal:+
+type:VAR,literal:str
+type:LPAREN,literal:(
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:OPE,literal:+
+type:STR,literal:
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:入力_alert_enable
+type:ASSIGN,literal:=
+type:BOOL,literal:False
+type:STMT,literal:stmt
+type:VAR,literal:入力_Gear
+type:ASSIGN,literal:=
+type:NUM,literal:0
+type:STMT,literal:stmt
+type:VAR,literal:想定結果_alert_enable
+type:ASSIGN,literal:=
+type:BOOL,literal:False
+type:STMT,literal:stmt
+type:VAR,literal:disp_sub_title
+type:LPAREN,literal:(
+type:STR,literal:テストケース
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:STR,literal:[インプット]
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:STR,literal:alert_enable:
+type:OPE,literal:+
+type:VAR,literal:str
+type:LPAREN,literal:(
+type:VAR,literal:入力_alert_enable
+type:RPAREN,literal:)
+type:OPE,literal:+
+type:STR,literal:
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:STR,literal:Gear:
+type:OPE,literal:+
+type:VAR,literal:str
+type:LPAREN,literal:(
+type:VAR,literal:入力_Gear
+type:RPAREN,literal:)
+type:OPE,literal:+
+type:STR,literal:
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:STR,literal:[想定結果]
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:print
+type:LPAREN,literal:(
+type:STR,literal:alert_enable:
+type:OPE,literal:+
+type:VAR,literal:str
+type:LPAREN,literal:(
+type:VAR,literal:想定結果_alert_enable
+type:RPAREN,literal:)
+type:OPE,literal:+
+type:STR,literal:
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:modeデータ情報
+type:ASSIGN,literal:=
+type:VAR,literal:入力データ生成＆取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:STR,literal:in_mode
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:modeデータ情報
+type:.,literal:.
+type:VAR,literal:alert_enable
+type:ASSIGN,literal:=
+type:VAR,literal:入力_alert_enable
+type:STMT,literal:stmt
+type:VAR,literal:入力データ保存
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:STR,literal:in_mode
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:COMMA,literal:,
+type:VAR,literal:modeデータ情報
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:canデータ情報
+type:ASSIGN,literal:=
+type:VAR,literal:入力データ生成＆取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:STR,literal:in_caninfoall
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:canデータ情報
+type:.,literal:.
+type:VAR,literal:Gear
+type:ASSIGN,literal:=
+type:VAR,literal:入力_Gear
+type:STMT,literal:stmt
+type:VAR,literal:入力データ保存
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:STR,literal:in_caninfoall
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:COMMA,literal:,
+type:VAR,literal:canデータ情報
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:canデータyaml
+type:ASSIGN,literal:=
+type:VAR,literal:入力データファイル名取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:STR,literal:in_caninfoall
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:modeデータyaml
+type:ASSIGN,literal:=
+type:VAR,literal:入力データファイル名取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:STR,literal:in_mode
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:出力データyaml
+type:ASSIGN,literal:=
+type:VAR,literal:出力データファイル名取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:ROSフォルダ指定
+type:LPAREN,literal:(
+type:VAR,literal:work_path
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:ROSノード起動
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:CanInfoAll投入
+type:LPAREN,literal:(
+type:STR,literal:/my_topic2
+type:COMMA,literal:,
+type:VAR,literal:canデータyaml
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:DriveMode投入
+type:LPAREN,literal:(
+type:STR,literal:/my_topic
+type:COMMA,literal:,
+type:VAR,literal:modeデータyaml
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:ROS結果取得
+type:LPAREN,literal:(
+type:STR,literal:/my_topic3
+type:COMMA,literal:,
+type:VAR,literal:出力データyaml
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:ROSノード終了
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:想定結果
+type:ASSIGN,literal:=
+type:VAR,literal:想定結果生成＆取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:想定結果
+type:.,literal:.
+type:VAR,literal:alert_enable
+type:ASSIGN,literal:=
+type:VAR,literal:想定結果_alert_enable
+type:STMT,literal:stmt
+type:VAR,literal:想定結果保存
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:COMMA,literal:,
+type:VAR,literal:想定結果
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:想定結果yaml
+type:ASSIGN,literal:=
+type:VAR,literal:想定結果ファイル名取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:実行結果yaml
+type:ASSIGN,literal:=
+type:VAR,literal:実行結果ファイル名取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:結果ファイルソート＆コピー
+type:LPAREN,literal:(
+type:VAR,literal:出力データyaml
+type:COMMA,literal:,
+type:VAR,literal:実行結果yaml
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:ROS比較除外登録
+type:LPAREN,literal:(
+type:LBRACK,literal:[
+type:STR,literal: nsec:
+type:COMMA,literal:,
+type:STR,literal: sec:
+type:RBRACK,literal:]
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:比較結果
+type:ASSIGN,literal:=
+type:VAR,literal:ROS結果比較
+type:LPAREN,literal:(
+type:VAR,literal:想定結果yaml
+type:COMMA,literal:,
+type:VAR,literal:実行結果yaml
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:disp_sub_title
+type:LPAREN,literal:(
+type:STR,literal:ROS比較結果
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:disp_list
+type:LPAREN,literal:(
+type:VAR,literal:比較結果
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:レポートファイル名
+type:ASSIGN,literal:=
+type:VAR,literal:レポートファイル名取得
+type:LPAREN,literal:(
+type:VAR,literal:node_name
+type:COMMA,literal:,
+type:VAR,literal:スクリプトID
+type:RPAREN,literal:)
+type:STMT,literal:stmt
+type:VAR,literal:write_list
+type:LPAREN,literal:(
+type:VAR,literal:レポートファイル名
+type:COMMA,literal:,
+type:VAR,literal:比較結果
+type:RPAREN,literal:)
+[Parser]
+0000:type:STMTS,literal:stmts
+0001:type:STMT,literal:stmt
+0002:type:IMPORT,literal:import
+0003:type:VAR,literal:inc
+0004:type:.,literal:.
+0005:type:VAR,literal:unit_test
+0006:type:STMT,literal:stmt
+0007:type:VAR,literal:path_info
+0008:type:ASSIGN,literal:=
+0009:type:VAR,literal:read_yaml
+0010:type:LPAREN,literal:(
+0011:type:STR,literal:path_info.yaml
+0012:type:RPAREN,literal:)
+0013:type:STMT,literal:stmt
+0014:type:VAR,literal:work_path
+0015:type:ASSIGN,literal:=
+0016:type:VAR,literal:path_info
+0017:type:.,literal:.
+0018:type:VAR,literal:path
+0019:type:.,literal:.
+0020:type:VAR,literal:work_path
+0021:type:STMT,literal:stmt
+0022:type:VAR,literal:node_name
+0023:type:ASSIGN,literal:=
+0024:type:STR,literal:multi_topics
+0025:type:STMT,literal:stmt
+0026:type:VAR,literal:print
+0027:type:LPAREN,literal:(
+0028:type:VAR,literal:work_path
+0029:type:RPAREN,literal:)
+0030:type:STMT,literal:stmt
+0031:type:VAR,literal:作業ワークパス情報生成
+0032:type:LPAREN,literal:(
+0033:type:VAR,literal:node_name
+0034:type:RPAREN,literal:)
+0035:type:STMT,literal:stmt
+0036:type:VAR,literal:スクリプトID
+0037:type:ASSIGN,literal:=
+0038:type:VAR,literal:スクリプトID取得
+0039:type:LPAREN,literal:(
+0040:type:RPAREN,literal:)
+0041:type:STMT,literal:stmt
+0042:type:VAR,literal:print
+0043:type:LPAREN,literal:(
+0044:type:STR,literal:スクリプトID:
+0045:type:OPE,literal:+
+0046:type:VAR,literal:str
+0047:type:LPAREN,literal:(
+0048:type:VAR,literal:スクリプトID
+0049:type:RPAREN,literal:)
+0050:type:OPE,literal:+
+0051:type:STR,literal:
+0052:type:RPAREN,literal:)
+0053:type:STMT,literal:stmt
+0054:type:VAR,literal:入力_alert_enable
+0055:type:ASSIGN,literal:=
+0056:type:BOOL,literal:False
+0057:type:STMT,literal:stmt
+0058:type:VAR,literal:入力_Gear
+0059:type:ASSIGN,literal:=
+0060:type:NUM,literal:0
+0061:type:STMT,literal:stmt
+0062:type:VAR,literal:想定結果_alert_enable
+0063:type:ASSIGN,literal:=
+0064:type:BOOL,literal:False
+0065:type:STMT,literal:stmt
+0066:type:VAR,literal:disp_sub_title
+0067:type:LPAREN,literal:(
+0068:type:STR,literal:テストケース
+0069:type:RPAREN,literal:)
+0070:type:STMT,literal:stmt
+0071:type:VAR,literal:print
+0072:type:LPAREN,literal:(
+0073:type:STR,literal:[インプット]
+0074:type:RPAREN,literal:)
+0075:type:STMT,literal:stmt
+0076:type:VAR,literal:print
+0077:type:LPAREN,literal:(
+0078:type:STR,literal:alert_enable:
+0079:type:OPE,literal:+
+0080:type:VAR,literal:str
+0081:type:LPAREN,literal:(
+0082:type:VAR,literal:入力_alert_enable
+0083:type:RPAREN,literal:)
+0084:type:OPE,literal:+
+0085:type:STR,literal:
+0086:type:RPAREN,literal:)
+0087:type:STMT,literal:stmt
+0088:type:VAR,literal:print
+0089:type:LPAREN,literal:(
+0090:type:STR,literal:Gear:
+0091:type:OPE,literal:+
+0092:type:VAR,literal:str
+0093:type:LPAREN,literal:(
+0094:type:VAR,literal:入力_Gear
+0095:type:RPAREN,literal:)
+0096:type:OPE,literal:+
+0097:type:STR,literal:
+0098:type:RPAREN,literal:)
+0099:type:STMT,literal:stmt
+0100:type:VAR,literal:print
+0101:type:LPAREN,literal:(
+0102:type:STR,literal:[想定結果]
+0103:type:RPAREN,literal:)
+0104:type:STMT,literal:stmt
+0105:type:VAR,literal:print
+0106:type:LPAREN,literal:(
+0107:type:STR,literal:alert_enable:
+0108:type:OPE,literal:+
+0109:type:VAR,literal:str
+0110:type:LPAREN,literal:(
+0111:type:VAR,literal:想定結果_alert_enable
+0112:type:RPAREN,literal:)
+0113:type:OPE,literal:+
+0114:type:STR,literal:
+0115:type:RPAREN,literal:)
+0116:type:STMT,literal:stmt
+0117:type:VAR,literal:modeデータ情報
+0118:type:ASSIGN,literal:=
+0119:type:VAR,literal:入力データ生成＆取得
+0120:type:LPAREN,literal:(
+0121:type:VAR,literal:node_name
+0122:type:COMMA,literal:,
+0123:type:STR,literal:in_mode
+0124:type:COMMA,literal:,
+0125:type:VAR,literal:スクリプトID
+0126:type:RPAREN,literal:)
+0127:type:STMT,literal:stmt
+0128:type:VAR,literal:modeデータ情報
+0129:type:.,literal:.
+0130:type:VAR,literal:alert_enable
+0131:type:ASSIGN,literal:=
+0132:type:VAR,literal:入力_alert_enable
+0133:type:STMT,literal:stmt
+0134:type:VAR,literal:入力データ保存
+0135:type:LPAREN,literal:(
+0136:type:VAR,literal:node_name
+0137:type:COMMA,literal:,
+0138:type:STR,literal:in_mode
+0139:type:COMMA,literal:,
+0140:type:VAR,literal:スクリプトID
+0141:type:COMMA,literal:,
+0142:type:VAR,literal:modeデータ情報
+0143:type:RPAREN,literal:)
+0144:type:STMT,literal:stmt
+0145:type:VAR,literal:canデータ情報
+0146:type:ASSIGN,literal:=
+0147:type:VAR,literal:入力データ生成＆取得
+0148:type:LPAREN,literal:(
+0149:type:VAR,literal:node_name
+0150:type:COMMA,literal:,
+0151:type:STR,literal:in_caninfoall
+0152:type:COMMA,literal:,
+0153:type:VAR,literal:スクリプトID
+0154:type:RPAREN,literal:)
+0155:type:STMT,literal:stmt
+0156:type:VAR,literal:canデータ情報
+0157:type:.,literal:.
+0158:type:VAR,literal:Gear
+0159:type:ASSIGN,literal:=
+0160:type:VAR,literal:入力_Gear
+0161:type:STMT,literal:stmt
+0162:type:VAR,literal:入力データ保存
+0163:type:LPAREN,literal:(
+0164:type:VAR,literal:node_name
+0165:type:COMMA,literal:,
+0166:type:STR,literal:in_caninfoall
+0167:type:COMMA,literal:,
+0168:type:VAR,literal:スクリプトID
+0169:type:COMMA,literal:,
+0170:type:VAR,literal:canデータ情報
+0171:type:RPAREN,literal:)
+0172:type:STMT,literal:stmt
+0173:type:VAR,literal:canデータyaml
+0174:type:ASSIGN,literal:=
+0175:type:VAR,literal:入力データファイル名取得
+0176:type:LPAREN,literal:(
+0177:type:VAR,literal:node_name
+0178:type:COMMA,literal:,
+0179:type:STR,literal:in_caninfoall
+0180:type:COMMA,literal:,
+0181:type:VAR,literal:スクリプトID
+0182:type:RPAREN,literal:)
+0183:type:STMT,literal:stmt
+0184:type:VAR,literal:modeデータyaml
+0185:type:ASSIGN,literal:=
+0186:type:VAR,literal:入力データファイル名取得
+0187:type:LPAREN,literal:(
+0188:type:VAR,literal:node_name
+0189:type:COMMA,literal:,
+0190:type:STR,literal:in_mode
+0191:type:COMMA,literal:,
+0192:type:VAR,literal:スクリプトID
+0193:type:RPAREN,literal:)
+0194:type:STMT,literal:stmt
+0195:type:VAR,literal:出力データyaml
+0196:type:ASSIGN,literal:=
+0197:type:VAR,literal:出力データファイル名取得
+0198:type:LPAREN,literal:(
+0199:type:VAR,literal:node_name
+0200:type:COMMA,literal:,
+0201:type:VAR,literal:スクリプトID
+0202:type:RPAREN,literal:)
+0203:type:STMT,literal:stmt
+0204:type:VAR,literal:ROSフォルダ指定
+0205:type:LPAREN,literal:(
+0206:type:VAR,literal:work_path
+0207:type:RPAREN,literal:)
+0208:type:STMT,literal:stmt
+0209:type:VAR,literal:ROSノード起動
+0210:type:LPAREN,literal:(
+0211:type:VAR,literal:node_name
+0212:type:RPAREN,literal:)
+0213:type:STMT,literal:stmt
+0214:type:VAR,literal:CanInfoAll投入
+0215:type:LPAREN,literal:(
+0216:type:STR,literal:/my_topic2
+0217:type:COMMA,literal:,
+0218:type:VAR,literal:canデータyaml
+0219:type:RPAREN,literal:)
+0220:type:STMT,literal:stmt
+0221:type:VAR,literal:DriveMode投入
+0222:type:LPAREN,literal:(
+0223:type:STR,literal:/my_topic
+0224:type:COMMA,literal:,
+0225:type:VAR,literal:modeデータyaml
+0226:type:RPAREN,literal:)
+0227:type:STMT,literal:stmt
+0228:type:VAR,literal:ROS結果取得
+0229:type:LPAREN,literal:(
+0230:type:STR,literal:/my_topic3
+0231:type:COMMA,literal:,
+0232:type:VAR,literal:出力データyaml
+0233:type:RPAREN,literal:)
+0234:type:STMT,literal:stmt
+0235:type:VAR,literal:ROSノード終了
+0236:type:LPAREN,literal:(
+0237:type:VAR,literal:node_name
+0238:type:RPAREN,literal:)
+0239:type:STMT,literal:stmt
+0240:type:VAR,literal:想定結果
+0241:type:ASSIGN,literal:=
+0242:type:VAR,literal:想定結果生成＆取得
+0243:type:LPAREN,literal:(
+0244:type:VAR,literal:node_name
+0245:type:COMMA,literal:,
+0246:type:VAR,literal:スクリプトID
+0247:type:RPAREN,literal:)
+0248:type:STMT,literal:stmt
+0249:type:VAR,literal:想定結果
+0250:type:.,literal:.
+0251:type:VAR,literal:alert_enable
+0252:type:ASSIGN,literal:=
+0253:type:VAR,literal:想定結果_alert_enable
+0254:type:STMT,literal:stmt
+0255:type:VAR,literal:想定結果保存
+0256:type:LPAREN,literal:(
+0257:type:VAR,literal:node_name
+0258:type:COMMA,literal:,
+0259:type:VAR,literal:スクリプトID
+0260:type:COMMA,literal:,
+0261:type:VAR,literal:想定結果
+0262:type:RPAREN,literal:)
+0263:type:STMT,literal:stmt
+0264:type:VAR,literal:想定結果yaml
+0265:type:ASSIGN,literal:=
+0266:type:VAR,literal:想定結果ファイル名取得
+0267:type:LPAREN,literal:(
+0268:type:VAR,literal:node_name
+0269:type:COMMA,literal:,
+0270:type:VAR,literal:スクリプトID
+0271:type:RPAREN,literal:)
+0272:type:STMT,literal:stmt
+0273:type:VAR,literal:実行結果yaml
+0274:type:ASSIGN,literal:=
+0275:type:VAR,literal:実行結果ファイル名取得
+0276:type:LPAREN,literal:(
+0277:type:VAR,literal:node_name
+0278:type:COMMA,literal:,
+0279:type:VAR,literal:スクリプトID
+0280:type:RPAREN,literal:)
+0281:type:STMT,literal:stmt
+0282:type:VAR,literal:結果ファイルソート＆コピー
+0283:type:LPAREN,literal:(
+0284:type:VAR,literal:出力データyaml
+0285:type:COMMA,literal:,
+0286:type:VAR,literal:実行結果yaml
+0287:type:RPAREN,literal:)
+0288:type:STMT,literal:stmt
+0289:type:VAR,literal:ROS比較除外登録
+0290:type:LPAREN,literal:(
+0291:type:LBRACK,literal:[
+0292:type:STR,literal: nsec:
+0293:type:COMMA,literal:,
+0294:type:STR,literal: sec:
+0295:type:RBRACK,literal:]
+0296:type:RPAREN,literal:)
+0297:type:STMT,literal:stmt
+0298:type:VAR,literal:比較結果
+0299:type:ASSIGN,literal:=
+0300:type:VAR,literal:ROS結果比較
+0301:type:LPAREN,literal:(
+0302:type:VAR,literal:想定結果yaml
+0303:type:COMMA,literal:,
+0304:type:VAR,literal:実行結果yaml
+0305:type:RPAREN,literal:)
+0306:type:STMT,literal:stmt
+0307:type:VAR,literal:disp_sub_title
+0308:type:LPAREN,literal:(
+0309:type:STR,literal:ROS比較結果
+0310:type:RPAREN,literal:)
+0311:type:STMT,literal:stmt
+0312:type:VAR,literal:disp_list
+0313:type:LPAREN,literal:(
+0314:type:VAR,literal:比較結果
+0315:type:RPAREN,literal:)
+0316:type:STMT,literal:stmt
+0317:type:VAR,literal:レポートファイル名
+0318:type:ASSIGN,literal:=
+0319:type:VAR,literal:レポートファイル名取得
+0320:type:LPAREN,literal:(
+0321:type:VAR,literal:node_name
+0322:type:COMMA,literal:,
+0323:type:VAR,literal:スクリプトID
+0324:type:RPAREN,literal:)
+0325:type:STMT,literal:stmt
+0326:type:VAR,literal:write_list
+0327:type:LPAREN,literal:(
+0328:type:VAR,literal:レポートファイル名
+0329:type:COMMA,literal:,
+0330:type:VAR,literal:比較結果
+0331:type:RPAREN,literal:)
+input:None
+output:stmt path_info read_yaml path_info.yaml ) ARG_list read_yaml = stmt work_path path_info = stmt node_name multi_topics = stmt print work_path ) ARG_list print stmt 作業ワークパス情報生成 node_name ) ARG_list 作業ワークパス情報生成 stmt スクリプトID スクリプトID取得 スクリプトID取得 = stmt print スクリプトID: str スクリプトID ) ARG_list str +  + ) ARG_list print stmt 入力_alert_enable False = stmt 入力_Gear 0 = stmt 想定結果_alert_enable False = stmt disp_sub_title テストケース ) ARG_list disp_sub_title stmt print [インプット] ) ARG_list print stmt print alert_enable: str 入力_alert_enable ) ARG_list str +  + ) ARG_list print stmt print Gear: str 入力_Gear ) ARG_list str +  + ) ARG_list print stmt print [想定結果] ) ARG_list print stmt print alert_enable: str 想定結果_alert_enable ) ARG_list str +  + ) ARG_list print stmt modeデータ情報 入力データ生成＆取得 node_name , ARG_list in_mode , ARG_list スクリプトID ) ARG_list 入力データ生成＆取得 = stmt modeデータ情報 入力_alert_enable = stmt 入力データ保存 node_name , ARG_list in_mode , ARG_list スクリプトID , ARG_list modeデータ情報 ) ARG_list 入力データ保存 stmt canデータ情報 入力データ生成＆取得 node_name , ARG_list in_caninfoall , ARG_list スクリプトID ) ARG_list 入力データ生成＆取得 = stmt canデータ情報 入力_Gear = stmt 入力データ保存 node_name , ARG_list in_caninfoall , ARG_list スクリプトID , ARG_list canデータ情報 ) ARG_list 入力データ保存 stmt canデータyaml 入力データファイル名取得 node_name , ARG_list in_caninfoall , ARG_list スクリプトID ) ARG_list 入力データファイル名取得 = stmt modeデータyaml 入力データファイル名取得 node_name , ARG_list in_mode , ARG_list スクリプトID ) ARG_list 入力データファイル名取得 = stmt 出力データyaml 出力データファイル名取得 node_name , ARG_list スクリプトID ) ARG_list 出力データファイル名取得 = stmt ROSフォルダ指定 work_path ) ARG_list ROSフォルダ指定 stmt ROSノード起動 node_name ) ARG_list ROSノード起動 stmt CanInfoAll投入 /my_topic2 , ARG_list canデータyaml ) ARG_list CanInfoAll投入 stmt DriveMode投入 /my_topic , ARG_list modeデータyaml ) ARG_list DriveMode投入 stmt ROS結果取得 /my_topic3 , ARG_list 出力データyaml ) ARG_list ROS結果取得 stmt ROSノード終了 node_name ) ARG_list ROSノード終了 stmt 想定結果 想定結果生成＆取得 node_name , ARG_list スクリプトID ) ARG_list 想定結果生成＆取得 = stmt 想定結果 想定結果_alert_enable = stmt 想定結果保存 node_name , ARG_list スクリプトID , ARG_list 想定結果 ) ARG_list 想定結果保存 stmt 想定結果yaml 想定結果ファイル名取得 node_name , ARG_list スクリプトID ) ARG_list 想定結果ファイル名取得 = stmt 実行結果yaml 実行結果ファイル名取得 node_name , ARG_list スクリプトID ) ARG_list 実行結果ファイル名取得 = stmt 結果ファイルソート＆コピー 出力データyaml , ARG_list 実行結果yaml ) ARG_list 結果ファイルソート＆コピー stmt ROS比較除外登録  nsec: list  sec: list ) ARG_list ROS比較除外登録 stmt 比較結果 ROS結果比較 想定結果yaml , ARG_list 実行結果yaml ) ARG_list ROS結果比較 = stmt disp_sub_title ROS比較結果 ) ARG_list disp_sub_title stmt disp_list 比較結果 ) ARG_list disp_list stmt レポートファイル名 レポートファイル名取得 node_name , ARG_list スクリプトID ) ARG_list レポートファイル名取得 = stmt write_list レポートファイル名 , ARG_list 比較結果 ) ARG_list write_list stmt stmts 
+type:STMTS,literal:stmts
+├─type:STMT,literal:stmt
+│ └─type:IMPORT,literal:inc.unit_test
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:path_info
+│   └─type:FUNC_CALL,literal:read_yaml
+│     └─type:ARG_LIST,literal:ARG_list
+│       └─type:STR,literal:path_info.yaml
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:work_path
+│   └─type:DICT_REF,literal:path_info
+│     └─type:STR,literal:path.work_path
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:node_name
+│   └─type:STR,literal:multi_topics
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:VAR,literal:work_path
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:作業ワークパス情報生成
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:VAR,literal:node_name
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:スクリプトID
+│   └─type:FUNC_CALL,literal:スクリプトID取得
+│     └─type:NONE,literal:None
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:OPE,literal:+
+│       ├─type:OPE,literal:+
+│       │ ├─type:STR,literal:スクリプトID:
+│       │ └─type:FUNC_CALL,literal:str
+│       │   └─type:ARG_LIST,literal:ARG_list
+│       │     └─type:VAR,literal:スクリプトID
+│       └─type:STR,literal:
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:入力_alert_enable
+│   └─type:BOOL,literal:False
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:入力_Gear
+│   └─type:NUM,literal:0
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:想定結果_alert_enable
+│   └─type:BOOL,literal:False
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:disp_sub_title
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:STR,literal:テストケース
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:STR,literal:[インプット]
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:OPE,literal:+
+│       ├─type:OPE,literal:+
+│       │ ├─type:STR,literal:alert_enable:
+│       │ └─type:FUNC_CALL,literal:str
+│       │   └─type:ARG_LIST,literal:ARG_list
+│       │     └─type:VAR,literal:入力_alert_enable
+│       └─type:STR,literal:
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:OPE,literal:+
+│       ├─type:OPE,literal:+
+│       │ ├─type:STR,literal:Gear:
+│       │ └─type:FUNC_CALL,literal:str
+│       │   └─type:ARG_LIST,literal:ARG_list
+│       │     └─type:VAR,literal:入力_Gear
+│       └─type:STR,literal:
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:STR,literal:[想定結果]
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:print
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:OPE,literal:+
+│       ├─type:OPE,literal:+
+│       │ ├─type:STR,literal:alert_enable:
+│       │ └─type:FUNC_CALL,literal:str
+│       │   └─type:ARG_LIST,literal:ARG_list
+│       │     └─type:VAR,literal:想定結果_alert_enable
+│       └─type:STR,literal:
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:modeデータ情報
+│   └─type:FUNC_CALL,literal:入力データ生成＆取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       ├─type:STR,literal:in_mode
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:DICT_REF,literal:modeデータ情報
+│   │ └─type:STR,literal:alert_enable
+│   └─type:VAR,literal:入力_alert_enable
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:入力データ保存
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:VAR,literal:node_name
+│     ├─type:STR,literal:in_mode
+│     ├─type:VAR,literal:スクリプトID
+│     └─type:VAR,literal:modeデータ情報
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:canデータ情報
+│   └─type:FUNC_CALL,literal:入力データ生成＆取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       ├─type:STR,literal:in_caninfoall
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:DICT_REF,literal:canデータ情報
+│   │ └─type:STR,literal:Gear
+│   └─type:VAR,literal:入力_Gear
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:入力データ保存
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:VAR,literal:node_name
+│     ├─type:STR,literal:in_caninfoall
+│     ├─type:VAR,literal:スクリプトID
+│     └─type:VAR,literal:canデータ情報
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:canデータyaml
+│   └─type:FUNC_CALL,literal:入力データファイル名取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       ├─type:STR,literal:in_caninfoall
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:modeデータyaml
+│   └─type:FUNC_CALL,literal:入力データファイル名取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       ├─type:STR,literal:in_mode
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:出力データyaml
+│   └─type:FUNC_CALL,literal:出力データファイル名取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:ROSフォルダ指定
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:VAR,literal:work_path
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:ROSノード起動
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:VAR,literal:node_name
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:CanInfoAll投入
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:STR,literal:/my_topic2
+│     └─type:VAR,literal:canデータyaml
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:DriveMode投入
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:STR,literal:/my_topic
+│     └─type:VAR,literal:modeデータyaml
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:ROS結果取得
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:STR,literal:/my_topic3
+│     └─type:VAR,literal:出力データyaml
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:ROSノード終了
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:VAR,literal:node_name
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:想定結果
+│   └─type:FUNC_CALL,literal:想定結果生成＆取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:DICT_REF,literal:想定結果
+│   │ └─type:STR,literal:alert_enable
+│   └─type:VAR,literal:想定結果_alert_enable
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:想定結果保存
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:VAR,literal:node_name
+│     ├─type:VAR,literal:スクリプトID
+│     └─type:VAR,literal:想定結果
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:想定結果yaml
+│   └─type:FUNC_CALL,literal:想定結果ファイル名取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:実行結果yaml
+│   └─type:FUNC_CALL,literal:実行結果ファイル名取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       └─type:VAR,literal:スクリプトID
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:結果ファイルソート＆コピー
+│   └─type:ARG_LIST,literal:ARG_list
+│     ├─type:VAR,literal:出力データyaml
+│     └─type:VAR,literal:実行結果yaml
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:ROS比較除外登録
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:LIST,literal:list
+│       ├─type:STR,literal: nsec:
+│       └─type:STR,literal: sec:
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:比較結果
+│   └─type:FUNC_CALL,literal:ROS結果比較
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:想定結果yaml
+│       └─type:VAR,literal:実行結果yaml
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:disp_sub_title
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:STR,literal:ROS比較結果
+├─type:STMT,literal:stmt
+│ └─type:FUNC_CALL,literal:disp_list
+│   └─type:ARG_LIST,literal:ARG_list
+│     └─type:VAR,literal:比較結果
+├─type:STMT,literal:stmt
+│ └─type:ASSIGN,literal:=
+│   ├─type:VAR,literal:レポートファイル名
+│   └─type:FUNC_CALL,literal:レポートファイル名取得
+│     └─type:ARG_LIST,literal:ARG_list
+│       ├─type:VAR,literal:node_name
+│       └─type:VAR,literal:スクリプトID
+└─type:STMT,literal:stmt
+  └─type:FUNC_CALL,literal:write_list
+    └─type:ARG_LIST,literal:ARG_list
+      ├─type:VAR,literal:レポートファイル名
+      └─type:VAR,literal:比較結果
+[AstTree]
+type:STMTS,literal:stmts
+token.children:44
+type:STMT,literal:stmt
+type:IMPORT,literal:inc.unit_test
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:read_yaml
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:path_info.yaml
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:DICT_REF,literal:path_info
+type:STR,literal:path.work_path
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:STR,literal:multi_topics
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:work_path
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:作業ワークパス情報生成
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:スクリプトID取得
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:OPE,literal:+
+type:OPE,literal:+
+type:STR,literal:スクリプトID:
+type:FUNC_CALL,literal:str
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:スクリプトID
+type:STR,literal:
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:BOOL,literal:False
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:NUM,literal:0
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:BOOL,literal:False
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:disp_sub_title
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:テストケース
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:[インプット]
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:OPE,literal:+
+type:OPE,literal:+
+type:STR,literal:alert_enable:
+type:FUNC_CALL,literal:str
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:入力_alert_enable
+type:STR,literal:
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:OPE,literal:+
+type:OPE,literal:+
+type:STR,literal:Gear:
+type:FUNC_CALL,literal:str
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:入力_Gear
+type:STR,literal:
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:[想定結果]
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:print
+type:ARG_LIST,literal:ARG_list
+type:OPE,literal:+
+type:OPE,literal:+
+type:STR,literal:alert_enable:
+type:FUNC_CALL,literal:str
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:想定結果_alert_enable
+type:STR,literal:
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:入力データ生成＆取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STR,literal:in_mode
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:VAR,literal:入力_alert_enable
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:入力データ保存
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STR,literal:in_mode
+type:VAR,literal:スクリプトID
+type:VAR,literal:modeデータ情報
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:入力データ生成＆取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STR,literal:in_caninfoall
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:VAR,literal:入力_Gear
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:入力データ保存
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STR,literal:in_caninfoall
+type:VAR,literal:スクリプトID
+type:VAR,literal:canデータ情報
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:入力データファイル名取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STR,literal:in_caninfoall
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:入力データファイル名取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STR,literal:in_mode
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:出力データファイル名取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSフォルダ指定
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:work_path
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSノード起動
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:CanInfoAll投入
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:/my_topic2
+type:VAR,literal:canデータyaml
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:DriveMode投入
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:/my_topic
+type:VAR,literal:modeデータyaml
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS結果取得
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:/my_topic3
+type:VAR,literal:出力データyaml
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSノード終了
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:想定結果生成＆取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:VAR,literal:想定結果_alert_enable
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:想定結果保存
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:VAR,literal:スクリプトID
+type:VAR,literal:想定結果
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:想定結果ファイル名取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:実行結果ファイル名取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:結果ファイルソート＆コピー
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:出力データyaml
+type:VAR,literal:実行結果yaml
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS比較除外登録
+type:ARG_LIST,literal:ARG_list
+type:LIST,literal:list
+type:STR,literal: nsec:
+type:STR,literal: sec:
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:ROS結果比較
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:想定結果yaml
+type:VAR,literal:実行結果yaml
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:disp_sub_title
+type:ARG_LIST,literal:ARG_list
+type:STR,literal:ROS比較結果
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:disp_list
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:比較結果
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:レポートファイル名取得
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:node_name
+type:VAR,literal:スクリプトID
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:write_list
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:レポートファイル名
+type:VAR,literal:比較結果
+['stmts', ['stmt', ['import', 'inc.unit_test']],['stmt', ['var_def', 'path_info', ['func_call', 'read_yaml', ['str', 'path_info.yaml']]]],['stmt', ['var_def', 'work_path', ['dict_ref', ['var_ref', 'path_info'], ['str', 'path.work_path']]]],['stmt', ['var_def', 'node_name', ['str', 'multi_topics']]],['stmt', ['func_call', 'print', ['var_ref', 'work_path']]],['stmt', ['func_call', '作業ワークパス情報生成', ['var_ref', 'node_name']]],['stmt', ['var_def', 'スクリプトID', ['func_call', 'スクリプトID取得', ['none', None]]]],['stmt', ['func_call', 'print', ['+', ['+', ['str', 'スクリプトID:'], ['func_call', 'str', ['var_ref', 'スクリプトID']]], ['str', '']]]],['stmt', ['var_def', '入力_alert_enable', ['bool', False]]],['stmt', ['var_def', '入力_Gear', ['num', 0]]],['stmt', ['var_def', '想定結果_alert_enable', ['bool', False]]],['stmt', ['func_call', 'disp_sub_title', ['str', 'テストケース']]],['stmt', ['func_call', 'print', ['str', '[インプット]']]],['stmt', ['func_call', 'print', ['+', ['+', ['str', 'alert_enable:'], ['func_call', 'str', ['var_ref', '入力_alert_enable']]], ['str', '']]]],['stmt', ['func_call', 'print', ['+', ['+', ['str', 'Gear:'], ['func_call', 'str', ['var_ref', '入力_Gear']]], ['str', '']]]],['stmt', ['func_call', 'print', ['str', '[想定結果]']]],['stmt', ['func_call', 'print', ['+', ['+', ['str', 'alert_enable:'], ['func_call', 'str', ['var_ref', '想定結果_alert_enable']]], ['str', '']]]],['stmt', ['var_def', 'modeデータ情報', ['func_call', '入力データ生成＆取得', ['var_ref', 'node_name'],['str', 'in_mode'],['var_ref', 'スクリプトID']]]],['stmt', ['dict_upd', 'modeデータ情報', 'alert_enable', ['var_ref', '入力_alert_enable']]],['stmt', ['func_call', '入力データ保存', ['var_ref', 'node_name'],['str', 'in_mode'],['var_ref', 'スクリプトID'],['var_ref', 'modeデータ情報']]],['stmt', ['var_def', 'canデータ情報', ['func_call', '入力データ生成＆取得', ['var_ref', 'node_name'],['str', 'in_caninfoall'],['var_ref', 'スクリプトID']]]],['stmt', ['dict_upd', 'canデータ情報', 'Gear', ['var_ref', '入力_Gear']]],['stmt', ['func_call', '入力データ保存', ['var_ref', 'node_name'],['str', 'in_caninfoall'],['var_ref', 'スクリプトID'],['var_ref', 'canデータ情報']]],['stmt', ['var_def', 'canデータyaml', ['func_call', '入力データファイル名取得', ['var_ref', 'node_name'],['str', 'in_caninfoall'],['var_ref', 'スクリプトID']]]],['stmt', ['var_def', 'modeデータyaml', ['func_call', '入力データファイル名取得', ['var_ref', 'node_name'],['str', 'in_mode'],['var_ref', 'スクリプトID']]]],['stmt', ['var_def', '出力データyaml', ['func_call', '出力データファイル名取得', ['var_ref', 'node_name'],['var_ref', 'スクリプトID']]]],['stmt', ['func_call', 'ROSフォルダ指定', ['var_ref', 'work_path']]],['stmt', ['func_call', 'ROSノード起動', ['var_ref', 'node_name']]],['stmt', ['func_call', 'CanInfoAll投入', ['str', '/my_topic2'],['var_ref', 'canデータyaml']]],['stmt', ['func_call', 'DriveMode投入', ['str', '/my_topic'],['var_ref', 'modeデータyaml']]],['stmt', ['func_call', 'ROS結果取得', ['str', '/my_topic3'],['var_ref', '出力データyaml']]],['stmt', ['func_call', 'ROSノード終了', ['var_ref', 'node_name']]],['stmt', ['var_def', '想定結果', ['func_call', '想定結果生成＆取得', ['var_ref', 'node_name'],['var_ref', 'スクリプトID']]]],['stmt', ['dict_upd', '想定結果', 'alert_enable', ['var_ref', '想定結果_alert_enable']]],['stmt', ['func_call', '想定結果保存', ['var_ref', 'node_name'],['var_ref', 'スクリプトID'],['var_ref', '想定結果']]],['stmt', ['var_def', '想定結果yaml', ['func_call', '想定結果ファイル名取得', ['var_ref', 'node_name'],['var_ref', 'スクリプトID']]]],['stmt', ['var_def', '実行結果yaml', ['func_call', '実行結果ファイル名取得', ['var_ref', 'node_name'],['var_ref', 'スクリプトID']]]],['stmt', ['func_call', '結果ファイルソート＆コピー', ['var_ref', '出力データyaml'],['var_ref', '実行結果yaml']]],['stmt', ['func_call', 'ROS比較除外登録', ['list_new', ['str', ' nsec:'],['str', ' sec:']]]],['stmt', ['var_def', '比較結果', ['func_call', 'ROS結果比較', ['var_ref', '想定結果yaml'],['var_ref', '実行結果yaml']]]],['stmt', ['func_call', 'disp_sub_title', ['str', 'ROS比較結果']]],['stmt', ['func_call', 'disp_list', ['var_ref', '比較結果']]],['stmt', ['var_def', 'レポートファイル名', ['func_call', 'レポートファイル名取得', ['var_ref', 'node_name'],['var_ref', 'スクリプトID']]]],['stmt', ['func_call', 'write_list', ['var_ref', 'レポートファイル名'],['var_ref', '比較結果']]]]
+[ExecTree]
+inc/unit_test.txt
+inc\func_unit_test.txt
+inc\func_csa_test.txt
+inc\func_ros_test.txt
+0000:type:STMTS,literal:stmts
+0001:type:STMT,literal:stmt
+0002:type:IMPORT,literal:import
+0003:type:VAR,literal:func_ros_sim
+0004:type:STMT,literal:stmt
+0005:type:IMPORT,literal:import
+0006:type:VAR,literal:func_ros_py
+0007:type:STMT,literal:stmt
+0008:type:DEF,literal:def
+0009:type:VAR,literal:ROSフォルダ指定
+0010:type:LPAREN,literal:(
+0011:type:VAR,literal:パス名
+0012:type:RPAREN,literal:)
+0013:type::,literal::
+0014:type:INDENT,literal:indent
+0015:type:STMT,literal:stmt
+0016:type:VAR,literal:os_type
+0017:type:ASSIGN,literal:=
+0018:type:VAR,literal:get_os_name
+0019:type:LPAREN,literal:(
+0020:type:RPAREN,literal:)
+0021:type:STMT,literal:stmt
+0022:type:IF,literal:if
+0023:type:VAR,literal:os_type
+0024:type:COMP,literal:==
+0025:type:STR,literal:nt
+0026:type::,literal::
+0027:type:INDENT,literal:indent
+0028:type:STMT,literal:stmt
+0029:type:VAR,literal:ROSフォルダ指定_sim
+0030:type:LPAREN,literal:(
+0031:type:VAR,literal:パス名
+0032:type:RPAREN,literal:)
+0033:type:DEDENT,literal:dedent
+0034:type:ELSE,literal:else
+0035:type::,literal::
+0036:type:STMT,literal:stmt
+0037:type:VAR,literal:ROSフォルダ指定_py
+0038:type:LPAREN,literal:(
+0039:type:VAR,literal:パス名
+0040:type:RPAREN,literal:)
+0041:type:DEDENT,literal:dedent
+0042:type:STMT,literal:stmt
+0043:type:DEF,literal:def
+0044:type:VAR,literal:ROS起動
+0045:type:LPAREN,literal:(
+0046:type:RPAREN,literal:)
+0047:type::,literal::
+0048:type:INDENT,literal:indent
+0049:type:STMT,literal:stmt
+0050:type:VAR,literal:os_type
+0051:type:ASSIGN,literal:=
+0052:type:VAR,literal:get_os_name
+0053:type:LPAREN,literal:(
+0054:type:RPAREN,literal:)
+0055:type:STMT,literal:stmt
+0056:type:IF,literal:if
+0057:type:VAR,literal:os_type
+0058:type:COMP,literal:==
+0059:type:STR,literal:nt
+0060:type::,literal::
+0061:type:INDENT,literal:indent
+0062:type:STMT,literal:stmt
+0063:type:VAR,literal:ROS起動_sim
+0064:type:LPAREN,literal:(
+0065:type:RPAREN,literal:)
+0066:type:DEDENT,literal:dedent
+0067:type:ELSE,literal:else
+0068:type::,literal::
+0069:type:STMT,literal:stmt
+0070:type:VAR,literal:ROS起動_py
+0071:type:LPAREN,literal:(
+0072:type:RPAREN,literal:)
+0073:type:DEDENT,literal:dedent
+0074:type:STMT,literal:stmt
+0075:type:DEF,literal:def
+0076:type:VAR,literal:ROS設定ファイル読込
+0077:type:LPAREN,literal:(
+0078:type:VAR,literal:param
+0079:type:COMMA,literal:,
+0080:type:VAR,literal:namespace
+0081:type:RPAREN,literal:)
+0082:type::,literal::
+0083:type:INDENT,literal:indent
+0084:type:STMT,literal:stmt
+0085:type:VAR,literal:os_type
+0086:type:ASSIGN,literal:=
+0087:type:VAR,literal:get_os_name
+0088:type:LPAREN,literal:(
+0089:type:RPAREN,literal:)
+0090:type:STMT,literal:stmt
+0091:type:IF,literal:if
+0092:type:VAR,literal:os_type
+0093:type:COMP,literal:==
+0094:type:STR,literal:nt
+0095:type::,literal::
+0096:type:INDENT,literal:indent
+0097:type:STMT,literal:stmt
+0098:type:VAR,literal:ROS設定ファイル読込_sim
+0099:type:LPAREN,literal:(
+0100:type:VAR,literal:param
+0101:type:COMMA,literal:,
+0102:type:VAR,literal:namespace
+0103:type:RPAREN,literal:)
+0104:type:DEDENT,literal:dedent
+0105:type:ELSE,literal:else
+0106:type::,literal::
+0107:type:STMT,literal:stmt
+0108:type:VAR,literal:ROS設定ファイル読込_py
+0109:type:LPAREN,literal:(
+0110:type:VAR,literal:param
+0111:type:COMMA,literal:,
+0112:type:VAR,literal:namespace
+0113:type:RPAREN,literal:)
+0114:type:DEDENT,literal:dedent
+0115:type:STMT,literal:stmt
+0116:type:DEF,literal:def
+0117:type:VAR,literal:ROSノード起動
+0118:type:LPAREN,literal:(
+0119:type:VAR,literal:ノード名
+0120:type:RPAREN,literal:)
+0121:type::,literal::
+0122:type:INDENT,literal:indent
+0123:type:STMT,literal:stmt
+0124:type:VAR,literal:os_type
+0125:type:ASSIGN,literal:=
+0126:type:VAR,literal:get_os_name
+0127:type:LPAREN,literal:(
+0128:type:RPAREN,literal:)
+0129:type:STMT,literal:stmt
+0130:type:IF,literal:if
+0131:type:VAR,literal:os_type
+0132:type:COMP,literal:==
+0133:type:STR,literal:nt
+0134:type::,literal::
+0135:type:INDENT,literal:indent
+0136:type:STMT,literal:stmt
+0137:type:VAR,literal:ROSノード起動_sim
+0138:type:LPAREN,literal:(
+0139:type:VAR,literal:ノード名
+0140:type:RPAREN,literal:)
+0141:type:DEDENT,literal:dedent
+0142:type:ELSE,literal:else
+0143:type::,literal::
+0144:type:STMT,literal:stmt
+0145:type:VAR,literal:ROSノード起動_py
+0146:type:LPAREN,literal:(
+0147:type:VAR,literal:ノード名
+0148:type:RPAREN,literal:)
+0149:type:DEDENT,literal:dedent
+0150:type:STMT,literal:stmt
+0151:type:DEF,literal:def
+0152:type:VAR,literal:ROSノード終了
+0153:type:LPAREN,literal:(
+0154:type:VAR,literal:ノード名
+0155:type:RPAREN,literal:)
+0156:type::,literal::
+0157:type:INDENT,literal:indent
+0158:type:STMT,literal:stmt
+0159:type:VAR,literal:os_type
+0160:type:ASSIGN,literal:=
+0161:type:VAR,literal:get_os_name
+0162:type:LPAREN,literal:(
+0163:type:RPAREN,literal:)
+0164:type:STMT,literal:stmt
+0165:type:IF,literal:if
+0166:type:VAR,literal:os_type
+0167:type:COMP,literal:==
+0168:type:STR,literal:nt
+0169:type::,literal::
+0170:type:INDENT,literal:indent
+0171:type:STMT,literal:stmt
+0172:type:VAR,literal:ROSノード終了_sim
+0173:type:LPAREN,literal:(
+0174:type:VAR,literal:ノード名
+0175:type:RPAREN,literal:)
+0176:type:DEDENT,literal:dedent
+0177:type:ELSE,literal:else
+0178:type::,literal::
+0179:type:STMT,literal:stmt
+0180:type:VAR,literal:ROSノード終了_py
+0181:type:LPAREN,literal:(
+0182:type:VAR,literal:ノード名
+0183:type:RPAREN,literal:)
+0184:type:DEDENT,literal:dedent
+0185:type:STMT,literal:stmt
+0186:type:DEF,literal:def
+0187:type:VAR,literal:ROSデータ投入
+0188:type:LPAREN,literal:(
+0189:type:VAR,literal:トピック名
+0190:type:COMMA,literal:,
+0191:type:VAR,literal:トピック型
+0192:type:COMMA,literal:,
+0193:type:VAR,literal:inトピックyaml
+0194:type:RPAREN,literal:)
+0195:type::,literal::
+0196:type:INDENT,literal:indent
+0197:type:STMT,literal:stmt
+0198:type:VAR,literal:os_type
+0199:type:ASSIGN,literal:=
+0200:type:VAR,literal:get_os_name
+0201:type:LPAREN,literal:(
+0202:type:RPAREN,literal:)
+0203:type:STMT,literal:stmt
+0204:type:IF,literal:if
+0205:type:VAR,literal:os_type
+0206:type:COMP,literal:==
+0207:type:STR,literal:nt
+0208:type::,literal::
+0209:type:INDENT,literal:indent
+0210:type:STMT,literal:stmt
+0211:type:VAR,literal:ROSデータ投入_sim
+0212:type:LPAREN,literal:(
+0213:type:VAR,literal:トピック名
+0214:type:COMMA,literal:,
+0215:type:VAR,literal:トピック型
+0216:type:COMMA,literal:,
+0217:type:VAR,literal:inトピックyaml
+0218:type:RPAREN,literal:)
+0219:type:DEDENT,literal:dedent
+0220:type:ELSE,literal:else
+0221:type::,literal::
+0222:type:STMT,literal:stmt
+0223:type:VAR,literal:ROSデータ投入_py
+0224:type:LPAREN,literal:(
+0225:type:VAR,literal:トピック名
+0226:type:COMMA,literal:,
+0227:type:VAR,literal:トピック型
+0228:type:COMMA,literal:,
+0229:type:VAR,literal:inトピックyaml
+0230:type:RPAREN,literal:)
+0231:type:DEDENT,literal:dedent
+0232:type:STMT,literal:stmt
+0233:type:DEF,literal:def
+0234:type:VAR,literal:ROS結果取得準備
+0235:type:LPAREN,literal:(
+0236:type:VAR,literal:トピック名
+0237:type:COMMA,literal:,
+0238:type:VAR,literal:outトピックyaml
+0239:type:RPAREN,literal:)
+0240:type::,literal::
+0241:type:INDENT,literal:indent
+0242:type:STMT,literal:stmt
+0243:type:VAR,literal:os_type
+0244:type:ASSIGN,literal:=
+0245:type:VAR,literal:get_os_name
+0246:type:LPAREN,literal:(
+0247:type:RPAREN,literal:)
+0248:type:STMT,literal:stmt
+0249:type:IF,literal:if
+0250:type:VAR,literal:os_type
+0251:type:COMP,literal:==
+0252:type:STR,literal:nt
+0253:type::,literal::
+0254:type:INDENT,literal:indent
+0255:type:STMT,literal:stmt
+0256:type:VAR,literal:ROS結果取得準備_sim
+0257:type:LPAREN,literal:(
+0258:type:VAR,literal:トピック名
+0259:type:COMMA,literal:,
+0260:type:VAR,literal:outトピックyaml
+0261:type:RPAREN,literal:)
+0262:type:DEDENT,literal:dedent
+0263:type:ELSE,literal:else
+0264:type::,literal::
+0265:type:STMT,literal:stmt
+0266:type:VAR,literal:ROS結果取得準備_py
+0267:type:LPAREN,literal:(
+0268:type:VAR,literal:トピック名
+0269:type:COMMA,literal:,
+0270:type:VAR,literal:outトピックyaml
+0271:type:RPAREN,literal:)
+0272:type:DEDENT,literal:dedent
+0273:type:STMT,literal:stmt
+0274:type:DEF,literal:def
+0275:type:VAR,literal:ROS結果取得
+0276:type:LPAREN,literal:(
+0277:type:VAR,literal:トピック名
+0278:type:COMMA,literal:,
+0279:type:VAR,literal:outトピックyaml
+0280:type:RPAREN,literal:)
+0281:type::,literal::
+0282:type:INDENT,literal:indent
+0283:type:STMT,literal:stmt
+0284:type:VAR,literal:os_type
+0285:type:ASSIGN,literal:=
+0286:type:VAR,literal:get_os_name
+0287:type:LPAREN,literal:(
+0288:type:RPAREN,literal:)
+0289:type:STMT,literal:stmt
+0290:type:IF,literal:if
+0291:type:VAR,literal:os_type
+0292:type:COMP,literal:==
+0293:type:STR,literal:nt
+0294:type::,literal::
+0295:type:INDENT,literal:indent
+0296:type:STMT,literal:stmt
+0297:type:VAR,literal:ROS結果取得_sim
+0298:type:LPAREN,literal:(
+0299:type:VAR,literal:トピック名
+0300:type:COMMA,literal:,
+0301:type:VAR,literal:outトピックyaml
+0302:type:RPAREN,literal:)
+0303:type:DEDENT,literal:dedent
+0304:type:ELSE,literal:else
+0305:type::,literal::
+0306:type:STMT,literal:stmt
+0307:type:VAR,literal:ROS結果取得_py
+0308:type:LPAREN,literal:(
+0309:type:VAR,literal:トピック名
+0310:type:COMMA,literal:,
+0311:type:VAR,literal:outトピックyaml
+0312:type:RPAREN,literal:)
+0313:type:DEDENT,literal:dedent
+input:None
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+error:typedargslist not expect! remain:268,token:RPAREN,)
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,STMT,DEF,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,:,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+LPAREN
+type_list::,INDENT,STMT,VAR,ASSIGN,VAR,LPAREN,RPAREN,STMT,IF,VAR,COMP,STR,:,INDENT,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT,ELSE,:,STMT,VAR,LPAREN,VAR,COMMA,VAR,RPAREN,DEDENT
+error:expected INDENT! type:STMT,literal:stmt
+token is empty!:else_stmt
+output:stmt stmt func_def パス名 func_def os_type get_os_name get_os_name = stmt os_type == nt == ROSフォルダ指定_sim パス名 ) ARG_list ROSフォルダ指定_sim stmt STMTS if else stmt ROSフォルダ指定_py パス名 ) ARG_list ROSフォルダ指定_py stmt STMTS func_def stmt func_def func_def os_type get_os_name get_os_name = stmt os_type == nt == ROS起動_sim ROS起動_sim stmt STMTS if else stmt ROS起動_py ROS起動_py stmt STMTS func_def stmt func_def param namespace func_def os_type get_os_name get_os_name = stmt os_type == nt == ROS設定ファイル読込_sim param , ARG_list namespace ) ARG_list ROS設定ファイル読込_sim stmt STMTS if else stmt ROS設定ファイル読込_py param , ARG_list namespace ) ARG_list ROS設定ファイル読込_py stmt STMTS func_def stmt func_def ノード名 func_def os_type get_os_name get_os_name = stmt os_type == nt == ROSノード起動_sim ノード名 ) ARG_list ROSノード起動_sim stmt STMTS if else stmt ROSノード起動_py ノード名 ) ARG_list ROSノード起動_py stmt STMTS func_def stmt func_def ノード名 func_def os_type get_os_name get_os_name = stmt os_type == nt == ROSノード終了_sim ノード名 ) ARG_list ROSノード終了_sim stmt STMTS if else stmt ROSノード終了_py ノード名 ) ARG_list ROSノード終了_py stmt STMTS func_def stmt func_def トピック名 トピック型 inトピックyaml func_def os_type get_os_name get_os_name = stmt os_type == nt == ROSデータ投入_sim トピック名 , ARG_list トピック型 , ARG_list inトピックyaml ) ARG_list ROSデータ投入_sim stmt STMTS if else stmt ROSデータ投入_py トピック名 , ARG_list トピック型 , ARG_list inトピックyaml ) ARG_list ROSデータ投入_py stmt STMTS func_def stmt func_def トピック名 outトピックyaml func_def os_type get_os_name get_os_name = stmt os_type == nt == ROS結果取得準備_sim トピック名 , ARG_list outトピックyaml ) ARG_list ROS結果取得準備_sim stmt STMTS if else stmt ROS結果取得準備_py トピック名 , ARG_list outトピックyaml ) ARG_list ROS結果取得準備_py stmt STMTS func_def stmt func_def トピック名 outトピックyaml func_def os_type get_os_name get_os_name = stmt os_type == nt == ROS結果取得_sim トピック名 , ARG_list outトピックyaml ) ARG_list ROS結果取得_sim stmt STMTS if else stmt ROS結果取得_py トピック名 , ARG_list outトピックyaml ) ARG_list ROS結果取得_py stmt STMTS func_def stmt stmts 
+type:STMTS,literal:stmts
+├─type:STMT,literal:stmt
+│ └─type:IMPORT,literal:func_ros_sim
+├─type:STMT,literal:stmt
+│ └─type:IMPORT,literal:func_ros_py
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROSフォルダ指定
+│   ├─type:PARA_LIST,literal:para_list
+│   │ └─type:VAR,literal:パス名
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROSフォルダ指定_sim
+│     │   │     └─type:ARG_LIST,literal:ARG_list
+│     │   │       └─type:VAR,literal:パス名
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROSフォルダ指定_py
+│         └─type:ARG_LIST,literal:ARG_list
+│           └─type:VAR,literal:パス名
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROS起動
+│   ├─type:PARA_LIST,literal:para_list
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROS起動_sim
+│     │   │     └─type:NONE,literal:None
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROS起動_py
+│         └─type:NONE,literal:None
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROS設定ファイル読込
+│   ├─type:PARA_LIST,literal:para_list
+│   │ ├─type:VAR,literal:param
+│   │ └─type:VAR,literal:namespace
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROS設定ファイル読込_sim
+│     │   │     └─type:ARG_LIST,literal:ARG_list
+│     │   │       ├─type:VAR,literal:param
+│     │   │       └─type:VAR,literal:namespace
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROS設定ファイル読込_py
+│         └─type:ARG_LIST,literal:ARG_list
+│           ├─type:VAR,literal:param
+│           └─type:VAR,literal:namespace
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROSノード起動
+│   ├─type:PARA_LIST,literal:para_list
+│   │ └─type:VAR,literal:ノード名
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROSノード起動_sim
+│     │   │     └─type:ARG_LIST,literal:ARG_list
+│     │   │       └─type:VAR,literal:ノード名
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROSノード起動_py
+│         └─type:ARG_LIST,literal:ARG_list
+│           └─type:VAR,literal:ノード名
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROSノード終了
+│   ├─type:PARA_LIST,literal:para_list
+│   │ └─type:VAR,literal:ノード名
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROSノード終了_sim
+│     │   │     └─type:ARG_LIST,literal:ARG_list
+│     │   │       └─type:VAR,literal:ノード名
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROSノード終了_py
+│         └─type:ARG_LIST,literal:ARG_list
+│           └─type:VAR,literal:ノード名
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROSデータ投入
+│   ├─type:PARA_LIST,literal:para_list
+│   │ ├─type:VAR,literal:トピック名
+│   │ ├─type:VAR,literal:トピック型
+│   │ └─type:VAR,literal:inトピックyaml
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROSデータ投入_sim
+│     │   │     └─type:ARG_LIST,literal:ARG_list
+│     │   │       ├─type:VAR,literal:トピック名
+│     │   │       ├─type:VAR,literal:トピック型
+│     │   │       └─type:VAR,literal:inトピックyaml
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROSデータ投入_py
+│         └─type:ARG_LIST,literal:ARG_list
+│           ├─type:VAR,literal:トピック名
+│           ├─type:VAR,literal:トピック型
+│           └─type:VAR,literal:inトピックyaml
+├─type:STMT,literal:stmt
+│ └─type:FUNC_DEF,literal:ROS結果取得準備
+│   ├─type:PARA_LIST,literal:para_list
+│   │ ├─type:VAR,literal:トピック名
+│   │ └─type:VAR,literal:outトピックyaml
+│   └─type:STMTS,literal:stmts
+│     ├─type:STMT,literal:stmt
+│     │ └─type:ASSIGN,literal:=
+│     │   ├─type:VAR,literal:os_type
+│     │   └─type:FUNC_CALL,literal:get_os_name
+│     │     └─type:NONE,literal:None
+│     ├─type:STMT,literal:stmt
+│     │ └─type:IF,literal:if
+│     │   ├─type:COMP,literal:==
+│     │   │ ├─type:VAR,literal:os_type
+│     │   │ └─type:STR,literal:nt
+│     │   ├─type:STMTS,literal:stmts
+│     │   │ └─type:STMT,literal:stmt
+│     │   │   └─type:FUNC_CALL,literal:ROS結果取得準備_sim
+│     │   │     └─type:ARG_LIST,literal:ARG_list
+│     │   │       ├─type:VAR,literal:トピック名
+│     │   │       └─type:VAR,literal:outトピックyaml
+│     │   └─type:ELSE,literal:else
+│     │     └─type:ELSE,literal:else
+│     └─type:STMT,literal:stmt
+│       └─type:FUNC_CALL,literal:ROS結果取得準備_py
+│         └─type:ARG_LIST,literal:ARG_list
+│           ├─type:VAR,literal:トピック名
+│           └─type:VAR,literal:outトピックyaml
+└─type:STMT,literal:stmt
+  └─type:FUNC_DEF,literal:ROS結果取得
+    ├─type:PARA_LIST,literal:para_list
+    │ ├─type:VAR,literal:トピック名
+    │ └─type:VAR,literal:outトピックyaml
+    └─type:STMTS,literal:stmts
+      ├─type:STMT,literal:stmt
+      │ └─type:ASSIGN,literal:=
+      │   ├─type:VAR,literal:os_type
+      │   └─type:FUNC_CALL,literal:get_os_name
+      │     └─type:NONE,literal:None
+      ├─type:STMT,literal:stmt
+      │ └─type:IF,literal:if
+      │   ├─type:COMP,literal:==
+      │   │ ├─type:VAR,literal:os_type
+      │   │ └─type:STR,literal:nt
+      │   ├─type:STMTS,literal:stmts
+      │   │ └─type:STMT,literal:stmt
+      │   │   └─type:FUNC_CALL,literal:ROS結果取得_sim
+      │   │     └─type:ARG_LIST,literal:ARG_list
+      │   │       ├─type:VAR,literal:トピック名
+      │   │       └─type:VAR,literal:outトピックyaml
+      │   └─type:ELSE,literal:else
+      │     └─type:ELSE,literal:else
+      └─type:STMT,literal:stmt
+        └─type:FUNC_CALL,literal:ROS結果取得_py
+          └─type:ARG_LIST,literal:ARG_list
+            ├─type:VAR,literal:トピック名
+            └─type:VAR,literal:outトピックyaml
+type:STMTS,literal:stmts
+token.children:10
+type:STMT,literal:stmt
+type:IMPORT,literal:func_ros_sim
+type:STMT,literal:stmt
+type:IMPORT,literal:func_ros_py
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROSフォルダ指定
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSフォルダ指定_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:パス名
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSフォルダ指定_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:パス名
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROS起動
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS起動_sim
+type:NONE,literal:None
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS起動_py
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROS設定ファイル読込
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS設定ファイル読込_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:param
+type:VAR,literal:namespace
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS設定ファイル読込_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:param
+type:VAR,literal:namespace
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROSノード起動
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSノード起動_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:ノード名
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSノード起動_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:ノード名
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROSノード終了
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSノード終了_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:ノード名
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSノード終了_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:ノード名
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROSデータ投入
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSデータ投入_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:トピック名
+type:VAR,literal:トピック型
+type:VAR,literal:inトピックyaml
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROSデータ投入_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:トピック名
+type:VAR,literal:トピック型
+type:VAR,literal:inトピックyaml
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROS結果取得準備
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS結果取得準備_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:トピック名
+type:VAR,literal:outトピックyaml
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS結果取得準備_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:トピック名
+type:VAR,literal:outトピックyaml
+type:STMT,literal:stmt
+type:FUNC_DEF,literal:ROS結果取得
+type:PARA_LIST,literal:para_list
+type:STMTS,literal:stmts
+token.children:3
+type:STMT,literal:stmt
+type:ASSIGN,literal:=
+type:FUNC_CALL,literal:get_os_name
+type:NONE,literal:None
+type:STMT,literal:stmt
+type:IF,literal:if
+type:COMP,literal:==
+type:VAR,literal:os_type
+type:STR,literal:nt
+type:STMTS,literal:stmts
+token.children:1
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS結果取得_sim
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:トピック名
+type:VAR,literal:outトピックyaml
+type:ELSE,literal:else
+token is empty!
+type:STMT,literal:stmt
+type:FUNC_CALL,literal:ROS結果取得_py
+type:ARG_LIST,literal:ARG_list
+type:VAR,literal:トピック名
+type:VAR,literal:outトピックyaml
+['stmts', ['stmt', ['import', 'func_ros_sim']],['stmt', ['import', 'func_ros_py']],['stmt', ['func_def', 'ROSフォルダ指定', ['パス名'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROSフォルダ指定_sim', ['var_ref', 'パス名']]]], ['else', None]]],['stmt', ['func_call', 'ROSフォルダ指定_py', ['var_ref', 'パス名']]]]]],['stmt', ['func_def', 'ROS起動', [], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROS起動_sim', ['none', None]]]], ['else', None]]],['stmt', ['func_call', 'ROS起動_py', ['none', None]]]]]],['stmt', ['func_def', 'ROS設定ファイル読込', ['param','namespace'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROS設定ファイル読込_sim', ['var_ref', 'param'],['var_ref', 'namespace']]]], ['else', None]]],['stmt', ['func_call', 'ROS設定ファイル読込_py', ['var_ref', 'param'],['var_ref', 'namespace']]]]]],['stmt', ['func_def', 'ROSノード起動', ['ノード名'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROSノード起動_sim', ['var_ref', 'ノード名']]]], ['else', None]]],['stmt', ['func_call', 'ROSノード起動_py', ['var_ref', 'ノード名']]]]]],['stmt', ['func_def', 'ROSノード終了', ['ノード名'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROSノード終了_sim', ['var_ref', 'ノード名']]]], ['else', None]]],['stmt', ['func_call', 'ROSノード終了_py', ['var_ref', 'ノード名']]]]]],['stmt', ['func_def', 'ROSデータ投入', ['トピック名','トピック型','inトピックyaml'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROSデータ投入_sim', ['var_ref', 'トピック名'],['var_ref', 'トピック型'],['var_ref', 'inトピックyaml']]]], ['else', None]]],['stmt', ['func_call', 'ROSデータ投入_py', ['var_ref', 'トピック名'],['var_ref', 'トピック型'],['var_ref', 'inトピックyaml']]]]]],['stmt', ['func_def', 'ROS結果取得準備', ['トピック名','outトピックyaml'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROS結果取得準備_sim', ['var_ref', 'トピック名'],['var_ref', 'outトピックyaml']]]], ['else', None]]],['stmt', ['func_call', 'ROS結果取得準備_py', ['var_ref', 'トピック名'],['var_ref', 'outトピックyaml']]]]]],['stmt', ['func_def', 'ROS結果取得', ['トピック名','outトピックyaml'], ['stmts', ['stmt', ['var_def', 'os_type', ['func_call', 'get_os_name', ['none', None]]]],['stmt', ['if', ['==', ['var_ref', 'os_type'], ['str', 'nt']], ['stmts', ['stmt', ['func_call', 'ROS結果取得_sim', ['var_ref', 'トピック名'],['var_ref', 'outトピックyaml']]]], ['else', None]]],['stmt', ['func_call', 'ROS結果取得_py', ['var_ref', 'トピック名'],['var_ref', 'outトピックyaml']]]]]]]
+inc\func_ros_sim.txt
+inc\func_ros_py.txt

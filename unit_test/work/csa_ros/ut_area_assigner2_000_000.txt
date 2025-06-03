@@ -1,0 +1,30 @@
+#======================================
+# 単体テストスクリプト(area_assigner編集版)
+#======================================
+import inc.unit_test
+
+#------------
+# テスト準備
+#------------
+#work_path = 'C:\Users\csa\Documents\MATLAB\unit_test\csa_unittest'
+path_info = read_yaml('path_info.yaml')
+work_path = path_info.path.work_path
+node_name = 'area_assigner'
+print(work_path)
+作業ワークパス情報生成(node_name)
+スクリプトID = スクリプトID取得()
+print(f'スクリプトID:{スクリプトID}')
+
+#-------------------
+# 入出力データyaml名
+#-------------------
+出力データyaml = 出力データファイル名取得(node_name, スクリプトID)
+
+#-------------
+# 実行結果判定
+#-------------
+想定結果yaml = 想定結果ファイル名取得(node_name, スクリプトID)
+想定データyaml = 出力データyaml + '_'
+結果ファイルソート＆コピー(想定データyaml, 想定結果yaml)
+実行結果yaml = 実行結果ファイル名取得(node_name, スクリプトID)
+結果ファイルソート＆コピー(出力データyaml, 実行結果yaml)

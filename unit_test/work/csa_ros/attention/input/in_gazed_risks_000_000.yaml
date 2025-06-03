@@ -1,0 +1,357 @@
+header:
+  stamp:
+    secs: 1702454408
+    nsecs: 618495225
+  seq: 388
+  frame_id: vehicle
+risks:
+- size:
+    x: 4.915
+    y: 1.85
+    z: 1.465
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 40.098338803479926
+    y: -12.922392394682104
+    z: 0.0
+  obj_id: 1
+  label: 1
+  type: 1
+  heading: [-3.1500000953674316]
+  confidence: 0.9241418199787566
+  distance: 42.12914668018807
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.4506958069282618
+  - 0.4506958069282618
+  - 0.4506958069282618
+  - 0.4506958069282618
+  - 0.4506958069282618
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 4.915
+    y: 1.85
+    z: 1.465
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 31.71681849417584
+    y: -12.9115616641877
+    z: 0.0
+  obj_id: 2
+  label: 1
+  type: 1
+  heading: [-3.1500000953674316]
+  confidence: 0.9241418199787566
+  distance: 34.24419658862821
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.45159048312290584
+  - 0.45159048312290584
+  - 0.45159048312290584
+  - 0.45159048312290584
+  - 0.45159048312290584
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 4.915
+    y: 1.85
+    z: 1.465
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 23.335298184871746
+    y: -12.900730933693293
+    z: 0.0
+  obj_id: 3
+  label: 1
+  type: 1
+  heading: [-3.1500000953674316]
+  confidence: 0.9241418199787566
+  distance: 26.663926942602238
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.45248588532668405
+  - 0.45248588532668405
+  - 0.45248588532668405
+  - 0.45248588532668405
+  - 0.45248588532668405
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 4.915
+    y: 1.85
+    z: 1.465
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 6.572257566263563
+    y: -12.87906947270448
+    z: 0.0
+  obj_id: 4
+  label: 1
+  type: 1
+  heading: [-3.1500000953674316]
+  confidence: 0.9241418199787566
+  distance: 14.459080192047388
+  mirror_assign_id: 3
+  side_assign_id: 2
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.4542775743813091
+  - 0.4542775743813091
+  - 0.4542775743813091
+  - 0.4542775743813091
+  - 0.4542775743813091
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 0.3
+    y: 0.5
+    z: 1.7
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 16.471849969748344
+    y: 21.61858363943237
+    z: 0.0
+  obj_id: 200
+  label: 3
+  type: 1
+  heading: [-4.739999771118164]
+  confidence: 0.9241418199787566
+  distance: 27.17876008947118
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.03317633629475438
+  - 0.03317633629475438
+  - 0.03317633629475438
+  - 0.03317633629475438
+  - 0.03317633629475438
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 0.3
+    y: 0.5
+    z: 1.7
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 11.70835761834462
+    y: 28.514897192202298
+    z: 0.0
+  obj_id: 300
+  label: 3
+  type: 1
+  heading: [-4.79679012298584]
+  confidence: 0.9241418199787566
+  distance: 30.82507096505886
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.0022183990414657256
+  - 0.0022183990414657256
+  - 0.0022183990414657256
+  - 0.0022183990414657256
+  - 0.0022183990414657256
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 0.3
+    y: 0.5
+    z: 1.7
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: 18.82714122946785
+    y: 20.780369417476596
+    z: 0.0
+  obj_id: 800
+  label: 3
+  type: 1
+  heading: [-4.739999771118164]
+  confidence: 0.9241418199787566
+  distance: 28.040773883777256
+  mirror_assign_id: 3
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: false
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: false
+  allow_looking_aside_alert: false
+  has_seen: false
+  recent_has_seen_probability:
+  - 0.04384823108526705
+  - 0.04384823108526705
+  - 0.04384823108526705
+  - 0.04384823108526705
+  - 0.04384823108526705
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false

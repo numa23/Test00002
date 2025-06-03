@@ -1,0 +1,7 @@
+header:
+  stamp:
+    sec: 0.0
+    nsec: 0.0
+  seq: 1
+  frame_id: Tester
+alert_enable: true

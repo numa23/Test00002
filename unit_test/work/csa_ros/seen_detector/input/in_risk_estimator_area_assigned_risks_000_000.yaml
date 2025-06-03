@@ -1,0 +1,95 @@
+header:
+  stamp:
+    secs: 1701840127
+    nsecs: 928359746
+  seq: 724
+  frame_id: vehicle
+risks:
+- size:
+    x: 4.915
+    y: 1.85
+    z: 1.465
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: -31.12795214553685
+    y: 14.351470141829395
+    z: 0.0
+  obj_id: 4
+  label: 1
+  type: 1
+  heading: [-3.1500000953674316]
+  confidence: 0.9241418199787566
+  distance: 34.277019998924246
+  mirror_assign_id: 2
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - true
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: true
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: true
+  allow_looking_aside_alert: false
+  has_seen: false
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false
+- size:
+    x: 4.915
+    y: 1.85
+    z: 1.465
+  velocity:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  position:
+    x: -29.96144820129833
+    y: -6.231028942297295
+    z: 0.0
+  obj_id: 403
+  label: 1
+  type: 1
+  heading: [-4.742909908294678]
+  confidence: 0.9241418199787566
+  distance: 30.602517870247695
+  mirror_assign_id: 1
+  side_assign_id: 0
+  assigned_areas:
+  - false
+  - false
+  - false
+  - false
+  - false
+  - false
+  - true
+  - false
+  - false
+  - false
+  - false
+  - false
+  exclude_overlook_alert: true
+  allow_overlook_alert: false
+  exclude_looking_aside_alert: true
+  allow_looking_aside_alert: false
+  has_seen: false
+  attention: false
+  overlook_alert: false
+  looking_aside_alert: false
+  horizontal_is_invade: false
+  occ: false
+  is_entered_area: false

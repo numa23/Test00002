@@ -1,0 +1,33 @@
+def ROSフォルダ指定_py(パス名):
+    pass
+
+def ROS起動_py():
+    disp_sub_title('ROS起動')
+    roscore()
+    sleep(1)
+
+def ROS設定ファイル読込_py(param, namespace):
+    rosparam_load(param, namespace)
+    sleep(3)
+
+def ROSノード起動_py(ノード名):
+    disp_sub_title('ROSノード起動:' + ノード名)
+    rosrun(ノード名)
+    sleep(3)
+
+def ROSノード終了_py(ノード名):
+    disp_sub_title('ROSノード終了:' + ノード名)
+    roskill()
+
+def ROSデータ投入_py(トピック名, トピック型, inトピックyaml):
+    disp_sub_title('ROSデータ投入:' + トピック名)
+    rostopic_pub(トピック名, トピック型, inトピックyaml)
+    sleep(3)
+
+def ROS結果取得準備_py(トピック名, outトピックyaml):
+    disp_sub_title('ROS結果取得準備:' + トピック名)
+    rostopic_echo(トピック名, outトピックyaml)
+    sleep(3)
+
+def ROS結果取得_py(トピック名, outトピックyaml):
+    pass

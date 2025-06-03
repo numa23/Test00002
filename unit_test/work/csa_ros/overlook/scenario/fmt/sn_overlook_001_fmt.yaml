@@ -1,0 +1,30 @@
+comand:
+  pub select:  $VALUE_01$
+  pub sleep:   $VALUE_02$
+  disp result: $VALUE_03$
+info:
+  case: $CASE$
+  desc: $DESC$
+result_tobe:
+  $HEADER_SEQ$:                           '$VALUE_04$'
+  $HEADER_TIMESTAMP_S$:                   '$VALUE_05$'
+  $HEADER_TIMESTAMP_NS$:                  '$VALUE_06$'
+  $ATTENTION$:                            '$VALUE_07$'
+  $CONFIDENCE$:                           '$VALUE_08$'
+  $ALLOW_OVERLOOK_ALERT$:                 '$VALUE_09$'
+  $EXCLUDE_OVERLOOK_ALERT$:               '$VALUE_10$'
+  $OVERLOOK_ALERT$:                       '$VALUE_11$'
+yaml_name:
+  - param/overlook
+  - input/in_overlook_$INDEX_01$
+param/overlook:
+  $OVERLOOKING_THRESHOLD$:                '$VALUE_12$'
+  $CONFIDENCE_THRESHOLD$:                 '$VALUE_13$'
+input/in_overlook_$INDEX_01$:
+  $HEADER_SEQ$:                           '$VALUE_14$'
+  $HEADER_TIMESTAMP_S$:                   '$VALUE_15$'
+  $HEADER_TIMESTAMP_NS$:                  '$VALUE_16$'
+  $ATTENTION$:                            '$VALUE_17$'
+  $CONFIDENCE$:                           '$VALUE_18$'
+  $ALLOW_OVERLOOK_ALERT$:                 '$VALUE_19$'
+  $EXCLUDE_OVERLOOK_ALERT$:               '$VALUE_20$'

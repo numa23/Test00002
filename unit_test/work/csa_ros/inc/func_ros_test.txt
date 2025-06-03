@@ -1,0 +1,58 @@
+import func_ros_sim
+import func_ros_py
+
+def ROSフォルダ指定(パス名):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROSフォルダ指定_sim(パス名)
+    else:
+        ROSフォルダ指定_py(パス名)
+
+def ROS起動():
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROS起動_sim()
+    else:
+        ROS起動_py()
+
+def ROS設定ファイル読込(param, namespace):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROS設定ファイル読込_sim(param, namespace)
+    else:
+        ROS設定ファイル読込_py(param, namespace)
+
+def ROSノード起動(ノード名):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROSノード起動_sim(ノード名)
+    else:
+        ROSノード起動_py(ノード名)
+
+def ROSノード終了(ノード名):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROSノード終了_sim(ノード名)
+    else:
+        ROSノード終了_py(ノード名)
+
+def ROSデータ投入(トピック名, トピック型, inトピックyaml):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROSデータ投入_sim(トピック名, トピック型, inトピックyaml)
+    else:
+        ROSデータ投入_py(トピック名, トピック型, inトピックyaml)
+
+def ROS結果取得準備(トピック名, outトピックyaml):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROS結果取得準備_sim(トピック名, outトピックyaml)
+    else:
+        ROS結果取得準備_py(トピック名, outトピックyaml)
+
+def ROS結果取得(トピック名, outトピックyaml):
+    os_type = get_os_name()
+    if os_type == 'nt':
+        ROS結果取得_sim(トピック名, outトピックyaml)
+    else:
+        ROS結果取得_py(トピック名, outトピックyaml)

@@ -1,0 +1,127 @@
+RoadTypeFIN:
+  一般道路(高速道路を除く): Public road (exclude Freeway)
+  高速道路: Freeway
+
+PrimaryResponsibleActorType:
+  四輪車: Car
+  二輪車: Motorbike
+  自転車 / マイクロモビリティ: Bicycle / micro mobility
+  歩行者: Pedestrian
+  動物: Animal
+
+SecondaryResponsibleActorType:
+  四輪車: Car
+  二輪車: Motorbike
+  自転車 / マイクロモビリティ: Bicycle / micro mobility
+  歩行者: Pedestrian
+  動物: Animal
+  単独事故: Solo accident 
+
+IncidentType:
+  正面衝突 (車両相互): Head on (Vehicle-Vehicle)
+  追突 (車両相互): Rear end (Vehicle-Vehicle)
+  出会い頭 (車両相互): Crossing (Vehicle-Vehicle)
+  追抜追越 (車両相互): Overtaking (Vehicle-Vehicle)
+  すれ違い (車両相互): Passing each other (Vehicle-Vehicle)
+  左折時 (車両相互): Turning left (Vehicle-Vehicle)
+  右折時 (車両相互): Turning right (Vehicle-Vehicle)
+  その他 (車両相互): Others (Vehicle-Vehicle)
+  電柱 標識 (単独): Pole or road sign (Solo)
+  工作物 (単独): Road structures (Solo)
+  駐車車両 (単独): Parked vehicle (Solo)
+  路外逸脱 (単独): Road departure  (Solo)
+  転倒 (単独): Fall down (Solo)
+  その他 (単独): Others (Solo)
+  対背面 (人対車両): Along street (Vehicle-Pedestrian)
+  横断歩道 (人対車両): Pedestrian crossing (Vehicle-Pedestrian)
+  その他横断 (人対車両): Other crossing (Vehicle-Pedestrian)
+  路上 (人対車両): On road (Vehicle-Pedestrian)
+  その他 (人対車両): Others (Vehicle-Pedestrian)
+  対背面 (動物対車両): Along street (Vehicle-Animal)
+  その他横断 (動物対車両): Other crossing (Vehicle-Animal)
+  路上 (動物対車両): Staying on the road (Vehicle-Animal)
+  その他 (動物対車両): Others (Vehicle-Animal)
+  追突 (高速道路): Rear end (Freeway)
+  対向車 (高速道路): Oncoming Vehicle (Freeway)
+  その他 ヒヤリハット (高速道路): Other Near-crash (Freeway)
+  工作物 (高速道路): Road structures (Freeway)
+  駐車車両 (高速道路): Parked vehicle (Freeway)
+  その他 (高速道路): Others (Freeway)
+  歩行者 (高速道路): Pedestrian (Freeway)
+  動物 (高速道路): Animal (Expressway)
+
+RoadStructure:
+  信号交差点: Intersection with signal light
+  無信号交差点: Intersection without signal light
+  交差点付近: Near Intersection
+  トンネル，橋: Turnnel
+  カーブ: Curve
+  一般単路: None Freeway
+  一般交通の場所: Pedestrian
+
+DrivingMode:
+  発進，直進: Driving straight
+  追越，進路変更: Changing cource
+  左折: Turning left
+  右折: Turning right
+  後退: Driving backward
+  その他: Others
+
+NearCrashDirection:
+  同方向: Forward direction
+  対向: Oncoming direction
+  右から: From right
+  左から: From left
+  右側: Right side
+  左側: Left side
+  停止: Stop
+  その他: Other
+  対象外 (単独): No direction (Solo)
+
+DayNight:
+  日中: Day
+  夜間(照らさせている交通参加者): Night (Opponent party illuminated)
+  夜間(照らさせていない交通参加者): Night (Opponent party not illuminated)
+  夜明け/夕暮れ: Dawn/Dusk
+  直射日光: Lower Sunlight
+  ヘッドライトによるハレーション: Halation caused by headlights
+
+Weather:
+  晴れ: Clear
+  曇り: Cloud
+  雨: Rain
+  雪/みぞれ: Snow/Sleet
+  霧: Fog
+  その他: Other
+
+RoadCondition:
+  乾燥: Dry Paved
+  湿潤: Wet Paved
+  凍結: Iced
+  雪: Snow
+  砂利/土/草: Gravel/Dirt/Grass
+
+RoadGeometry:
+  直線(R>100m): Straight(R>100m)
+  カーブ(R<100): Curved(R<100)
+  交差点: Intersection
+  合流/分岐: Merging/Split
+  その他: Others
+
+LaneLine:
+  両側のレーンラインが明瞭: Clear Lane Line in both sides
+  両側のレーンラインが不明瞭(片側のみのレーンラインを含む): No Clear Lane Line in both sides(include one side line only)
+
+PrincipalOperatorFailure:
+  わき見 : Looking Aside 
+  ながら運転: Other tasks
+  見落とし: Overlooked
+  集中力の低下: Poor concentration
+  動的オブジェクトの誤った移動予測: Poor Tracking
+  眠気 / 居眠り: Sleepy / Asleep
+  薬/アルコール/病気: Drug/alcohol/sick
+  誤った推測: Wrong Estimation
+  道路状況の誤認識: Bad Road condition Perception
+  誤操作: Wrong Control
+  不特定多数: Unspecified
+  ヒューマンエラーなし: No human error

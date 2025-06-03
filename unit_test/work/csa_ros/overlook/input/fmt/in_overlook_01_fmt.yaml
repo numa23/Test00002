@@ -1,0 +1,23 @@
+header: 
+  seq: $HEADER_SEQ$
+  stamp: {secs: $HEADER_TIMESTAMP_S$, nsecs: $HEADER_TIMESTAMP_NS$}
+  frame_id: ''
+risks:
+- size: {x: 0.0, y: 0.0, z: 0.0}
+  velocity: {x: 0.0, y: 0.0, z: 0.0}
+  obj_id: 0
+  label: 0
+  type: 0
+  position: {x: 0.0, y: 0.0, z: 0.0}
+  heading: [0]
+  estimated_pos:
+  - {x: 0.0, y: 0.0, z: 0.0}
+  confidence: $CONFIDENCE$
+  distance: 0.0
+  mirror_assign_id: 0
+  side_assign_id: 0
+  assigned_areas: [false]
+  exclude_overlook_alert: $EXCLUDE_OVERLOOK_ALERT$
+  allow_overlook_alert: $ALLOW_OVERLOOK_ALERT$
+  attention: $ATTENTION$
+  is_entered_area: false

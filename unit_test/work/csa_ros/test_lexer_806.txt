@@ -1,0 +1,73 @@
+import inc.unit_test_sim
+
+#-----------------
+# 単体テスト雰囲気
+#-----------------
+
+work_path = 'C:\Users\csa\Documents\MATLAB\unit_test\csa_unittest'
+node_name = 'multi_topics'
+print(work_path)
+
+作業ワークパス情報生成(node_name)
+
+入力データパス = 入力データパス取得(node_name)
+modeデータyaml = 入力データパス + 'in_mode1.yaml'
+canデータyaml = 入力データパス + 'in_caninfoall1.yaml'
+
+canデータ情報 = read_yaml(canデータyaml)
+print(canデータ情報.Gear)
+canデータ情報.Gear = 1
+write_yaml(canデータyaml, canデータ情報)
+yamlファイル表示(canデータyaml)
+
+出力データ01 = ['','','']
+出力データ02 = ['','','']
+
+出力データパス = 出力データパス取得(node_name)
+出力データ01[0] = 出力データパス + 'out_mode1_multi10.yaml'
+出力データ01[1] = 出力データパス + 'out_mode1_multi11.yaml'
+出力データ02[0] = 出力データパス + 'out_mode1_multi20.yaml'
+出力データ02[1] = 出力データパス + 'out_mode1_multi21.yaml'
+
+ROSフォルダ指定(work_path)
+ROSノード起動(node_name)
+
+for index in range(2):
+
+    DriveMode投入('/my_topic', modeデータyaml)
+    CanInfoAll投入('/my_topic2', canデータyaml)
+    ROS結果取得('/my_topic3', 出力データ01[index])
+
+    DriveMode投入('/my_topic', modeデータyaml)
+    ROS結果取得('/my_topic3', 出力データ02[index])
+
+ROSノード終了(node_name)
+
+比較格納パス = 比較格納パス取得(node_name)
+
+実行結果01 = 比較格納パス + 'out_mode1_multi1_asis.yaml'
+実行結果02 = 比較格納パス + 'out_mode1_multi2_asis.yaml'
+
+結果ファイルソート＆コピー(出力データ01[0], 実行結果01)
+結果ファイルソート＆コピー(出力データ02[0], 実行結果02)
+
+想定結果01 = 比較格納パス + 'out_mode1_multi1_tobe.yaml'
+想定結果02 = 比較格納パス + 'out_mode1_multi2_tobe.yaml'
+
+ROS比較除外登録([' nsec:', ' sec:'])
+
+比較結果01 = ROS結果比較(想定結果01, 実行結果01)
+比較結果02 = ROS結果比較(想定結果02, 実行結果02)
+
+disp_sub_title('ROS比較結果')
+disp_list(比較結果01)
+print(' ')
+disp_list(比較結果02)
+
+
+
+#比較結果1 = ROS結果比較('test_data/out_mode1_multi1_tobe.yaml', test_data/out_mode1_multi1_asis.yaml)
+#比較結果2 = ROS結果比較('test_data/out_mode1_multi2_tobe.yaml', test_data/out_mode1_multi2_asis.yaml)
+
+#disp_list(比較結果1)
+#disp_list(比較結果2)

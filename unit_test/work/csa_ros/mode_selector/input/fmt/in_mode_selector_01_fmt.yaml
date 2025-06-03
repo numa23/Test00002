@@ -1,0 +1,20 @@
+header: 
+  seq: $HEADER_SEQ$
+  stamp: {secs: $HEADER_TIMESTAMP_S$, nsecs: $HEADER_TIMESTAMP_NS$}
+  frame_id: ''
+throttle: $THROTTLE$
+steering_angle: 0.0
+steering_speed: 0.0
+gear: $GEAR$
+turn_signal: 0
+brake_switch: 0
+vehicle_speed: $VEHICLE_SPEED$
+wheel_speed_fl: 0.0
+wheel_speed_fr: 0.0
+wheel_speed_rl: 0.0
+wheel_speed_rr: 0.0
+acceleration_lat: 0.0
+acceleration_lon: 0.0
+angular_yaw_rate: 0.0
+driver_brake_pressure: $DRIVER_BRAKE_PRESSURE$
+control_brake_pressure: 0.0

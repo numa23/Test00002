@@ -1,0 +1,174 @@
+def シナリオ情報取得():
+    #-------------------
+    # get scenario info
+    #-------------------
+    disp_sub_title('get scenario info')
+
+def 引数取得():
+    print('引数取得')
+    return 23
+
+def パス情報取得():
+    print('パス情報取得')
+    return 23
+
+def シナリオ情報取得():
+    print('シナリオ情報取得')
+    return 23
+
+def 設定ファイル準備():
+    print('設定ファイル準備')
+    return 23
+def 入力ファイル準備():
+    print('入力ファイル準備')
+    return 23
+
+def ROSターゲット情報取得():
+    print('ROSターゲット情報取得')
+    return 23
+
+def numリスト取得？():
+    print('numリスト取得？')
+    return 23
+
+def コマンド情報取得():
+    print('コマンド情報取得')
+    return 23
+
+def ROS起動():
+    print('ROS起動')
+    #---------
+    # roscore
+    #---------
+    disp_sub_title('roscore')
+    roscore()
+    #sleep(1.0)
+    sleep(1)
+
+def ROS起動_ダミー():
+    print('ROS起動')
+    #---------
+    # roscore
+    #---------
+    disp_sub_title('roscore')
+    print('roscore()')
+    #sleep(1.0)
+    sleep(1)
+
+def ROS設定(param, namespace):
+    #---------------
+    # rosparam_load
+    #---------------
+    disp_sub_title('rosparam_load')
+    rosparam_load(param, namespace)
+    #sleep(2.0)
+    sleep(2)
+
+def ROS設定_ダミー(param, namespace):
+    #---------------
+    # rosparam_load
+    #---------------
+    disp_sub_title('rosparam_load')
+    print('rosparam_load(param, namespace)')
+    #sleep(2.0)
+    sleep(2)
+
+def ROSターゲットNODE起動(pkg_node):
+    print('ROSターゲットNODE起動')
+    #--------
+    # rosrun
+    #--------
+    disp_sub_title('rosrun')
+    rosrun(pkg_node)
+    #sleep(3.0)
+    sleep(3)
+
+def ROSターゲットNODE起動_ダミー(pkg_node):
+    print('ROSターゲットNODE起動')
+    #--------
+    # rosrun
+    #--------
+    disp_sub_title('rosrun')
+    print('rosrun(pkg_node)')
+    #sleep(3.0)
+    sleep(3)
+
+def ROS出力監視(topic_name):
+    print('ROS出力監視')
+    #---------------
+    # rostopic echo
+    #---------------
+    disp_sub_title('rostopic echo')
+    rostopic_echo(topic_name)
+    #sleep(2.0)
+    sleep(2)
+
+def ROS出力監視_ダミー(topic_name):
+    print('ROS出力監視')
+    #---------------
+    # rostopic echo
+    #---------------
+    disp_sub_title('rostopic echo')
+    print('rostopic_echo(topic_name)')
+    #sleep(2.0)
+    sleep(2)
+
+def ROS入力データ投入(topic_name, topic_type, file):
+    print('入力データ投入')
+    #--------------
+    # rostopic pub
+    #--------------
+    disp_sub_title('rostopic pub')
+    rostopic_pub(topic_name, topic_type, file)
+    #sleep(10.0)
+    #sleep(10)
+
+def ROS入力データ投入_ダミー(topic_name, topic_type, file):
+    print('入力データ投入')
+    #--------------
+    # rostopic pub
+    #--------------
+    disp_sub_title('rostopic pub')
+    print('rostopic_pub(topic_name, topic_type, file)')
+    #sleep(10.0)
+    #sleep(10)
+
+def 想定結果取得():
+    print('想定結果取得')
+    return 23
+def 実行結果取得():
+    print('実行結果取得')
+    return 23
+
+def 判定結果表示():
+    print('判定結果表示')
+    return 23
+
+def ROS終了():
+    disp_sub_title('roskill')
+    print('ROS終了')
+    roskill()
+
+def ROS終了_ダミー():
+    disp_sub_title('roskill')
+    print('ROS終了')
+    print('roskill()')
+
+def 結果ファイルソート(ファイル名):
+    dict = read_yaml(ファイル名)
+    write_sort_yaml(ファイル名 + '_', dict)
+
+def ROS比較除外登録(除外リスト):
+    save('skip_comp', 除外リスト)
+
+def ROS結果比較(想定結果ファイル名, 実行結果ファイル名):
+    結果ファイルソート(想定結果ファイル名)
+    結果ファイルソート(実行結果ファイル名)
+    diff_result = get_diff_result(想定結果ファイル名 + '_', 実行結果ファイル名 + '_')
+    #print('ROS結果比較')
+    #print(diff_result)
+    return diff_result
+
+def ROS結果出力(結果ファイル名, 比較結果リスト):
+    disp_list(比較結果リスト)
+    write_list(結果ファイル名, 比較結果リスト)

@@ -1,0 +1,28 @@
+def ROSフォルダ指定_sim(パス名):
+    disp_sub_title('ROSフォルダ指定:' + パス名)
+    ros_cd_sim(パス名)
+
+def ROS起動_sim():
+    pass
+
+def ROS設定ファイル読込_sim(param, namespace):
+    pass
+
+def ROSノード起動_sim(ノード名):
+    disp_sub_title('ROSノード起動:' + ノード名)
+    ros_node_run_sim(ノード名)
+
+def ROSノード終了_sim(ノード名):
+    disp_sub_title('ROSノード終了:' + ノード名)
+    ros_node_kill_sim(ノード名)
+
+def ROSデータ投入_sim(トピック名, トピック型, inトピックyaml):
+    disp_sub_title('ROSデータ投入:' + トピック名)
+    ros_topic_publish_sim(トピック名, トピック型, inトピックyaml)
+
+def ROS結果取得準備_sim(トピック名, outトピックyaml):
+    pass
+
+def ROS結果取得_sim(トピック名, outトピックyaml):
+    disp_sub_title('ROS結果取得:' + トピック名)
+    ros_topic_echo_sim(トピック名, outトピックyaml)

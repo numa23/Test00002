@@ -1,0 +1,306 @@
+
+---------------------
+ pass / fail summary 
+---------------------
+(ok / ng / total) = (29 / 0 / 29)
+
+-------------
+ result list 
+-------------
+(o):001 001 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:41:52, desc:gear is 0:NONE
+(o):001 002 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:42:24, desc:gear is 1:PARK
+(o):001 003 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:42:55, desc:gear is 2:REVERSE
+(o):001 004 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:43:27, desc:gear is 3:NEUTRAL
+(o):001 005 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:43:58, desc:gear is 4:DRIVE
+(o):001 006 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:44:30, desc:gear is 5:LOW
+(o):001 007 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:45:02, desc:gear is 10(out of range)
+(o):002 001 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:45:33, desc:throttle:0 & driver_brake_pressure:0
+(o):002 002 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:46:05, desc:throttle:0 & driver_brake_pressure:999
+(o):002 003 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:46:36, desc:throttle:0 & driver_brake_pressure:1000
+(o):002 004 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:47:08, desc:throttle:0 & driver_brake_pressure:1001
+(o):002 005 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:47:40, desc:throttle:1 & driver_brake_pressure:0
+(o):002 006 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:48:11, desc:throttle:1 & driver_brake_pressure:999
+(o):002 007 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:48:43, desc:throttle:1 & driver_brake_pressure:1000
+(o):002 008 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:49:14, desc:throttle:1 & driver_brake_pressure:1001
+(o):002 009 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:49:46, desc:throttle:10 & driver_brake_pressure:0
+(o):002 010 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:50:18, desc:throttle:10 & driver_brake_pressure:999
+(o):002 011 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:50:49, desc:throttle:10 & driver_brake_pressure:1000
+(o):002 012 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:51:21, desc:throttle:10 & driver_brake_pressure:1001
+(o):003 001 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:51:53, desc:prev alert_enable:False & vehicle_speed:0
+(o):003 002 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:52:27, desc:prev alert_enable:False & vehicle_speed:1
+(o):003 003 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:53:02, desc:prev alert_enable:False & vehicle_speed:2
+(o):003 004 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:53:37, desc:prev alert_enable:False & vehicle_speed:3
+(o):003 005 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:54:11, desc:prev alert_enable:False & vehicle_speed:4
+(o):003 006 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:54:46, desc:prev alert_enable:True & vehicle_speed:0
+(o):003 007 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:55:21, desc:prev alert_enable:True & vehicle_speed:1
+(o):003 008 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:55:55, desc:prev alert_enable:True & vehicle_speed:2
+(o):003 009 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:56:30, desc:prev alert_enable:True & vehicle_speed:3
+(o):003 010 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:57:05, desc:prev alert_enable:True & vehicle_speed:4
+
+---------------
+ result detail 
+---------------
+Expected result on the left, execution result on the right.
+Mark '*' for unmatch items.
+
+[(o):001 001 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:41:52, desc:gear is 0:NONE]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 002 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:42:24, desc:gear is 1:PARK]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 003 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:42:55, desc:gear is 2:REVERSE]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 004 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:43:27, desc:gear is 3:NEUTRAL]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 005 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:43:58, desc:gear is 4:DRIVE]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 006 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:44:30, desc:gear is 5:LOW]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):001 007 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:45:02, desc:gear is 10(out of range)]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 001 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:45:33, desc:throttle:0 & driver_brake_pressure:0]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 002 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:46:05, desc:throttle:0 & driver_brake_pressure:999]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 003 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:46:36, desc:throttle:0 & driver_brake_pressure:1000]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 004 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:47:08, desc:throttle:0 & driver_brake_pressure:1001]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 005 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:47:40, desc:throttle:1 & driver_brake_pressure:0]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 006 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:48:11, desc:throttle:1 & driver_brake_pressure:999]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 007 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:48:43, desc:throttle:1 & driver_brake_pressure:1000]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 008 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:49:14, desc:throttle:1 & driver_brake_pressure:1001]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 009 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:49:46, desc:throttle:10 & driver_brake_pressure:0]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 010 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:50:18, desc:throttle:10 & driver_brake_pressure:999]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 011 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:50:49, desc:throttle:10 & driver_brake_pressure:1000]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):002 012 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:51:21, desc:throttle:10 & driver_brake_pressure:1001]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+
+[(o):003 001 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:51:53, desc:prev alert_enable:False & vehicle_speed:0]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 002 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:52:27, desc:prev alert_enable:False & vehicle_speed:1]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 003 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:53:02, desc:prev alert_enable:False & vehicle_speed:2]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 004 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:53:37, desc:prev alert_enable:False & vehicle_speed:3]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 005 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:54:11, desc:prev alert_enable:False & vehicle_speed:4]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 006 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:54:46, desc:prev alert_enable:True & vehicle_speed:0]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 007 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:55:21, desc:prev alert_enable:True & vehicle_speed:1]
+alert_enable: false                                             alert_enable: false
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 008 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:55:55, desc:prev alert_enable:True & vehicle_speed:2]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 009 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:56:30, desc:prev alert_enable:True & vehicle_speed:3]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+
+[(o):003 010 00, unmatch:0, version:1.0.0, exec:2023/12/05 09:57:05, desc:prev alert_enable:True & vehicle_speed:4]
+alert_enable: true                                              alert_enable: true
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 2                                                          seq: 2
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990401                                                secs: 1661990401
+

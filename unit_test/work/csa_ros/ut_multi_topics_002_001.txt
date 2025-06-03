@@ -1,0 +1,58 @@
+#========================================
+# 単体テストスクリプト(multi_topics連続版)
+#========================================
+import func_multi_topics_001
+
+def テストケース表示(入力, 想定結果):
+    disp_sub_title('テストケース')
+    print('[インプット]')
+    print(f'alert_enable:{入力.alert_enable}')
+    print(f'Gear:{入力.Gear}')
+    print('[想定結果]')
+    print(f'alert_enable:{想定結果.alert_enable}')
+
+#------------
+# テスト準備
+#------------
+スクリプトID = スクリプトID取得()
+メインID = split(スクリプトID, '_')
+メインID = メインID[0]
+print(f'メインID:{メインID}')
+print(f'スクリプトID:{スクリプトID}')
+入力 = {'alert_enable': False, 'Gear': 0}
+想定結果 = {'alert_enable': False}
+
+#テストデータセット = ['','','','']
+#テストデータセット[0] = {'入力': {'alert_enable': False, 'Gear': 0}, '想定結果': {'alert_enable': False}}
+#テストデータセット[1] = {'入力': {'alert_enable': True, 'Gear': 0}, '想定結果': {'alert_enable': False}}
+#テストデータセット[2] = {'入力': {'alert_enable': False, 'Gear': 1}, '想定結果': {'alert_enable': True}}
+#テストデータセット[3] = {'入力': {'alert_enable': True, 'Gear': 1}, '想定結果': {'alert_enable': True}}
+テストデータセット = []
+テストデータセット += [{'入力': {'alert_enable': False, 'Gear': 0}, '想定結果': {'alert_enable': False}}]
+テストデータセット += [{'入力': {'alert_enable': True, 'Gear': 0}, '想定結果': {'alert_enable': False}}]
+テストデータセット += [{'入力': {'alert_enable': False, 'Gear': 1}, '想定結果': {'alert_enable': True}}]
+テストデータセット += [{'入力': {'alert_enable': True, 'Gear': 1}, '想定結果': {'alert_enable': True}}]
+print(テストデータセット)
+
+count = len(テストデータセット)
+for index in range(count):
+    スクリプトID = メインID + '_' + zfill(index + 1, 3)
+    print(f'スクリプトID:{スクリプトID}')
+    テストデータ = テストデータセット[index]
+
+    #-------------
+    # テストケース
+    #-------------
+    #[インプット]
+    入力.alert_enable = テストデータ.入力.alert_enable
+    入力.Gear = テストデータ.入力.Gear
+
+    #[想定結果]
+    想定結果.alert_enable = テストデータ.想定結果.alert_enable
+
+    テストケース表示(入力, 想定結果)
+
+    #---------------
+    # 単体テスト実行
+    #---------------
+    unit_test(スクリプトID, 入力, 想定結果)

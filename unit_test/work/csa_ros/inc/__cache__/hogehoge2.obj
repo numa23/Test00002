@@ -1,0 +1,1 @@
+['stmts', ['stmt', ['func_def', 'pp', ['x'], ['stmts', ['stmt', ['func_call', 'p', ['var_ref', 'x']]]]]]]

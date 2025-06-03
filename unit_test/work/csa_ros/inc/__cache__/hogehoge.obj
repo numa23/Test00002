@@ -1,0 +1,1 @@
+['stmts', ['stmt', ['import', 'hogehoge2']],['stmt', ['func_def', 'test_abc', ['x','y'], ['stmts', ['stmt', ['return', ['+', ['var_ref', 'x'], ['var_ref', 'y']]]]]]]]

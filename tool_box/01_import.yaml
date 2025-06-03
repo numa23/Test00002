@@ -1,0 +1,127 @@
+palette:
+  'default': 'FFFFDD'
+  'red': 'FF7F7F'
+  'pink': 'FFADD6'
+  'green': 'BFFF7F'
+  'scenario_param': 'DAEEF3'
+  'pattern_code': 'FDE9D9'
+  'check_movie': '7FFFFF'
+
+bg_color:
+  '全体コメント': 'red'
+  '事故キーワード': 'red'
+  '事故形態': 'red'
+  '事故形態細目': 'red'
+  '法令違反項目': 'pink'
+  '種別': 'green'
+  '種別細目': 'green'
+  '起点': 'green'
+  '目的地': 'green'
+  '対象方向': 'green'
+  '事故部位': 'green'
+  '進行状態': 'green'
+  '進路': 'green'
+  '道路種別': 'green'
+  '路面状態': 'green'
+  '交差点形状': 'green'
+  '信号種別': 'green'
+  '天気': 'green'
+
+matrix:
+  '当事者区分':
+    column: 'D'
+    color: scenario_param
+    row_items:
+      - '法令違反項目'
+  '日中/  夜間':
+    column: 'E'
+    color: scenario_param
+    row_items:
+      - '発生時刻'
+  '天候':
+    column: 'F'
+    color: scenario_param
+    help_text: '動画確認'
+    row_items:
+      - '天気'
+  '路面状況':
+    column: 'G'
+    color: scenario_param
+    row_items:
+      - '路面状態'
+  '道路形状':
+    column: 'H'
+    color: scenario_param
+    row_items:
+      - 'カーブ形状'
+      - '交差点形状'
+  'レーンライン':
+    column: 'I'
+    color: scenario_param
+    help_text: '動画確認'
+    row_items: []
+  '主なヒューマンエラー':
+    column: 'J'
+    color: scenario_param
+    help_text: '動画確認'
+    row_items:
+      - '全体コメント'
+      - '法令違反項目'
+  '道路種別':
+    column: 'K'
+    color: pattern_code
+    row_items:
+      - '道路種別'
+  '第１当事者(プライマリー)':
+    column: 'L'
+    color: pattern_code
+    row_items:
+      - '種別'
+      - '種別細目'
+  '第２当事者(セカンダリー)':
+    column: 'M'
+    color: pattern_code
+    row_items:
+      - '種別'
+      - '種別細目'
+  '事故類型(一般道路)':
+    column: 'N'
+    color: pattern_code
+    row_items:
+      - '事故キーワード'
+      - '事故形態'
+      - '事故形態細目'
+      - '道路種別'
+  '事故類型(高速道路)':
+    column: 'O'
+    color: pattern_code
+    row_items:
+      - '事故キーワード'
+      - '事故形態'
+      - '事故形態細目'
+      - '道路種別'
+  '道路構造':
+    column: 'P'
+    color: pattern_code
+    help_text: '動画確認'
+    row_items:
+      - '起点'
+      - '目的地'
+      - '交差点形状'
+      - '信号種別'
+  '行動類型':
+    column: 'Q'
+    color: pattern_code
+    help_text: '動画確認'
+    row_items:
+      - '進行状態'
+      - '進路'
+  'ヒヤリハット方向':
+    column: 'R'
+    color: pattern_code
+    help_text: '動画確認'
+    row_items:
+      - 対象方向'
+      - '事故部位'
+      - '進行状態'
+      - '進路'

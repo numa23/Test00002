@@ -1,0 +1,42 @@
+import inc.func_ros
+#import inc.hogehoge
+
+#-----------------
+# 単体テスト雰囲気
+#-----------------
+
+#想定結果取得()
+#実行結果取得()
+
+#判定結果表示()
+
+結果格納場所 = 'mode_selector\report\analysis\'
+想定結果ファイル名 = 結果格納場所 + 'out_mode_selector_001_001_00_asis.yaml'
+実行結果ファイル名 = 結果格納場所 + 'out_mode_selector_001_001_00_tobe.yaml'
+print('想定結果ファイル名:' + 想定結果ファイル名)
+flag = isfile(想定結果ファイル名)
+print('isfile:' + str(flag))
+result = ROS結果比較(想定結果ファイル名, 実行結果ファイル名)
+ROS結果出力('report/report2.txt', result)
+
+exit()
+
+tobe = 'report\out_mode_selector_001_001_00_tobe.yaml'
+asis = 'report\out_mode_selector_001_001_00_asis.yaml'
+result = ROS結果比較(tobe, asis)
+
+#結果ファイルソート(asis)
+
+#disp_list(result)
+#write_list('report.txt', result)
+ROS結果出力('report/report.txt', result)
+
+#max = len(result)
+#max = load('ng_count')
+ng_count = get_ng_count()
+print('ng_count:' + str(ng_count))
+
+#result_01 = [1,7,2,3]
+
+#print(result)
+#print(max)

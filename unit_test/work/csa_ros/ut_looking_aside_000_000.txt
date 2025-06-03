@@ -1,0 +1,80 @@
+#========================================
+# 単体テストスクリプト(looking_aside編集版)
+#=======================================
+import inc.unit_test
+
+#------------
+# テスト準備
+#------------
+#work_path = 'C:\Users\csa\Documents\MATLAB\unit_test\csa_unittest'
+path_info = read_yaml('path_info.yaml')
+work_path = path_info.path.work_path
+node_name = 'looking_aside'
+print(work_path)
+作業ワークパス情報生成(node_name)
+スクリプトID = スクリプトID取得()
+print(f'スクリプトID:{スクリプトID}')
+
+#-------------
+# テストケース
+#-------------
+#[インプット]
+
+#[想定結果]
+#想定結果_alert_enable = False
+
+disp_sub_title('テストケース')
+print('[インプット]')
+#print('[想定結果]')
+#print(f'alert_enable:{想定結果_alert_enable}')
+
+#---------------
+# 入力データ準備
+#---------------
+#modeデータ情報 = 入力データ生成＆取得(node_name, 'in_mode', スクリプトID)
+#modeデータ情報.alert_enable = 入力_alert_enable
+#入力データ保存(node_name, 'in_mode', スクリプトID, modeデータ情報)
+#canデータ情報 = 入力データ生成＆取得(node_name, 'in_caninfoall', スクリプトID)
+#canデータ情報.Gear = 入力_Gear
+#入力データ保存(node_name, 'in_caninfoall', スクリプトID, canデータ情報)
+
+#-------------------
+# 入出力データyaml名
+#-------------------
+looking_aside_yaml = 設定ファイル名取得(node_name, 'looking_aside')
+canデータyaml = 入力データファイル名取得(node_name, 'in_caninfoall', スクリプトID)
+risk_attentioned_risksデータyaml = 入力データファイル名取得(node_name, 'in_risk_estimator_attentioned_risks', スクリプトID)
+risk_modeデータyaml = 入力データファイル名取得(node_name, 'in_risk_estimator_mode', スクリプトID)
+dmc_preprocessedデータyaml = 入力データファイル名取得(node_name, 'in_risk_estimator_dmc_preprocessed', スクリプトID)
+出力データyaml = 出力データファイル名取得(node_name, スクリプトID)
+
+#---------------
+# 単体テスト実行
+#---------------
+ROSフォルダ指定(work_path)
+ROS起動()
+ROS設定ファイル読込(looking_aside_yaml, '/csa_and_csa_intersection/looking_aside')
+ROSノード起動(node_name)
+ROS結果取得準備('/risk_estimator/mode', 出力データyaml)
+CanInfoAll投入('/can/can_info_all', canデータyaml)
+Risks投入('/risk_estimator/attentioned_risks', risk_attentioned_risksデータyaml)
+DriveMode投入('/risk_estimator/mode', risk_modeデータyaml)
+DmcPreprocessed投入('/risk_estimator/dmc_preprocessed', dmc_preprocessedデータyaml)
+ROS結果取得('/risk_estimator/mode', 出力データyaml)
+ROSノード終了(node_name)
+
+#-------------
+# 実行結果判定
+#-------------
+#想定結果 = 想定結果生成＆取得(node_name, スクリプトID)
+#想定結果.alert_enable = 想定結果_alert_enable
+#想定結果保存(node_name, スクリプトID, 想定結果)
+#想定結果yaml = 想定結果ファイル名取得(node_name, スクリプトID)
+#実行結果yaml = 実行結果ファイル名取得(node_name, スクリプトID)
+#結果ファイルソート＆コピー(出力データyaml, 実行結果yaml)
+#ROS比較除外登録([' nsec:', ' sec:'])
+#比較結果 = ROS結果比較(想定結果yaml, 実行結果yaml)
+#disp_sub_title('ROS比較結果')
+#disp_list(比較結果)
+#レポートファイル名 = レポートファイル名取得(node_name, スクリプトID)
+#write_list(レポートファイル名, 比較結果)

@@ -1,0 +1,9 @@
+rosparam:
+  param_01: 'load param/overlook.yaml /csa_and_csa_intersection/overlook'
+
+rosrun:
+  rosrun_01: 'csa_and_csa_intersection overlook_node.py'
+
+rostopic:
+  echo_01: '/risk_estimator/overlook/risks'
+  pub_01: '/risk_estimator/attentioned_risks csa_and_csa_intersection/Risks'

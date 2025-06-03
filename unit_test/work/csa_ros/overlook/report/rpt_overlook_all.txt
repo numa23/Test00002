@@ -1,0 +1,1096 @@
+
+---------------------
+ pass / fail summary 
+---------------------
+(ok / ng / total) = (18 / 0 / 18)
+
+-------------
+ result list 
+-------------
+(o):001 001 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:55:28, desc:attention:False,confidence:0.0 & allow:False,exclude:False
+(o):001 002 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:55:59, desc:attention:False,confidence:0.0 & allow:False,exclude:True
+(o):001 003 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:56:31, desc:attention:False,confidence:0.0 & allow:True,exclude:False
+(o):001 004 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:57:03, desc:attention:False,confidence:0.0 & allow:True,exclude:True
+(o):001 005 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:57:34, desc:attention:False,confidence:1.0 & allow:False,exclude:False
+(o):001 006 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:58:06, desc:attention:False,confidence:1.0 & allow:False,exclude:True
+(o):001 007 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:58:38, desc:attention:False,confidence:1.0 & allow:True,exclude:False
+(o):001 008 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:59:09, desc:attention:False,confidence:1.0 & allow:True,exclude:True
+(o):001 009 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:59:41, desc:attention:True,confidence:0.0 & allow:False,exclude:False
+(o):001 010 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:00:13, desc:attention:True,confidence:0.0 & allow:False,exclude:True
+(o):001 011 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:00:44, desc:attention:True,confidence:0.0 & allow:True,exclude:False
+(o):001 012 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:01:16, desc:attention:True,confidence:0.0 & allow:True,exclude:True
+(o):001 013 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:01:48, desc:attention:True,confidence:1.0 & allow:False,exclude:False
+(o):001 014 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:02:19, desc:attention:True,confidence:1.0 & allow:False,exclude:True
+(o):001 015 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:02:51, desc:attention:True,confidence:1.0 & allow:True,exclude:False
+(o):001 016 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:03:22, desc:attention:True,confidence:1.0 & allow:True,exclude:True
+(o):001 017 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:03:54, desc:attention:False,confidence:0.9 & allow:True,exclude:False
+(o):001 018 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:04:26, desc:attention:False,confidence:0.8 & allow:True,exclude:False
+
+---------------
+ result detail 
+---------------
+Expected result on the left, execution result on the right.
+Mark '*' for unmatch items.
+
+[(o):001 001 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:55:28, desc:attention:False,confidence:0.0 & allow:False,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 002 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:55:59, desc:attention:False,confidence:0.0 & allow:False,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 003 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:56:31, desc:attention:False,confidence:0.0 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 004 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:57:03, desc:attention:False,confidence:0.0 & allow:True,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 005 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:57:34, desc:attention:False,confidence:1.0 & allow:False,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 006 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:58:06, desc:attention:False,confidence:1.0 & allow:False,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 007 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:58:38, desc:attention:False,confidence:1.0 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: true                                            overlook_alert: true
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 008 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:59:09, desc:attention:False,confidence:1.0 & allow:True,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 009 00, unmatch:0, version:1.0.0, exec:2023/12/04 17:59:41, desc:attention:True,confidence:0.0 & allow:False,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 010 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:00:13, desc:attention:True,confidence:0.0 & allow:False,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 011 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:00:44, desc:attention:True,confidence:0.0 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 012 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:01:16, desc:attention:True,confidence:0.0 & allow:True,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 0.0                                                 confidence: 0.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 013 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:01:48, desc:attention:True,confidence:1.0 & allow:False,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 014 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:02:19, desc:attention:True,confidence:1.0 & allow:False,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: false                                     allow_overlook_alert: false
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 015 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:02:51, desc:attention:True,confidence:1.0 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 016 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:03:22, desc:attention:True,confidence:1.0 & allow:True,exclude:True]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: true                                                 attention: true
+  confidence: 1.0                                                 confidence: 1.0
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: true                                    exclude_overlook_alert: true
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 017 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:03:54, desc:attention:False,confidence:0.9 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.8                                                 confidence: 0.8
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: true                                            overlook_alert: true
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+
+[(o):001 018 00, unmatch:0, version:1.0.0, exec:2023/12/04 18:04:26, desc:attention:False,confidence:0.8 & allow:True,exclude:False]
+header:                                                         header:
+  frame_id: ''                                                    frame_id: ''
+  seq: 1                                                          seq: 1
+  stamp:                                                          stamp:
+    nsecs: 0                                                        nsecs: 0
+    secs: 1661990400                                                secs: 1661990400
+risks:                                                          risks:
+- allow_looking_aside_alert: false                              - allow_looking_aside_alert: false
+  allow_overlook_alert: true                                      allow_overlook_alert: true
+  assigned_areas:                                                 assigned_areas:
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  - false                                                         - false
+  attention: false                                                attention: false
+  confidence: 0.7                                                 confidence: 0.7
+  distance: 0.0                                                   distance: 0.0
+  estimated_pos:                                                  estimated_pos:
+  - x: 0.0                                                        - x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  exclude_looking_aside_alert: false                              exclude_looking_aside_alert: false
+  exclude_overlook_alert: false                                   exclude_overlook_alert: false
+  has_seen: false                                                 has_seen: false
+  heading:                                                        heading:
+  - 0.0                                                           - 0.0
+  horizontal_is_invade: false                                     horizontal_is_invade: false
+  is_entered_area: false                                          is_entered_area: false
+  label: 0                                                        label: 0
+  looking_aside_alert: false                                      looking_aside_alert: false
+  mirror_assign_id: 0                                             mirror_assign_id: 0
+  obj_id: 0                                                       obj_id: 0
+  occ: false                                                      occ: false
+  overlook_alert: false                                           overlook_alert: false
+  position:                                                       position:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  recent_has_seen_probability: []                                 recent_has_seen_probability: []
+  side_assign_id: 0                                               side_assign_id: 0
+  size:                                                           size:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+  type: 0                                                         type: 0
+  velocity:                                                       velocity:
+    x: 0.0                                                          x: 0.0
+    y: 0.0                                                          y: 0.0
+    z: 0.0                                                          z: 0.0
+

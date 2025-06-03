@@ -1,0 +1,7 @@
+header: 
+  seq: $HEADER_SEQ$
+  stamp: 
+    secs: $HEADER_TIMESTAMP_S$
+    nsecs: $HEADER_TIMESTAMP_NS$
+  frame_id: ''
+alert_enable: $ALERT_ENABLE$

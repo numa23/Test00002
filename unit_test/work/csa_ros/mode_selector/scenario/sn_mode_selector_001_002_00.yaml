@@ -1,0 +1,27 @@
+comand:
+  pub select:  ["01"]
+  pub sleep:   3.0
+  disp result: True
+info:
+  case: P002
+  desc: gear is 1:PARK
+result_tobe:
+  $HEADER_SEQ$:                           '1'
+  $HEADER_TIMESTAMP_S$:                   '1661990400'
+  $HEADER_TIMESTAMP_NS$:                  '000000000'
+  $ALERT_ENABLE$:                         'False'
+yaml_name:
+  - param/mode_selector
+  - input/in_mode_selector_01  # /can/can_info_all
+param/mode_selector:
+  $BRAKE_THRESHOLD$:                      '1000'
+  $SPEED_THRESHOLD_HIGH$:                 '3'
+  $SPEED_THRESHOLD_LOW$:                  '1'
+input/in_mode_selector_01:
+  $HEADER_SEQ$:                           '1'
+  $HEADER_TIMESTAMP_S$:                   '1661990400'
+  $HEADER_TIMESTAMP_NS$:                  '000000000'
+  $VEHICLE_SPEED$:                        '0.0'
+  $THROTTLE$:                             '10.0'
+  $DRIVER_BRAKE_PRESSURE$:                '0.0'
+  $GEAR$:                                 '1'

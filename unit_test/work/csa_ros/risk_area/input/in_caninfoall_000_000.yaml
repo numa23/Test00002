@@ -1,0 +1,21 @@
+header:
+  stamp:
+    secs: 1702443521
+    nsecs: 857604163
+  seq: 1731274
+throttle: 0.0
+steering_angle: 0.0
+steering_speed: 0.0
+gear: 1
+turn_signal: 0
+brake_switch: 1
+vehicle_speed: 0.0
+wheel_speed_fl: 0.0
+wheel_speed_fr: 0.0
+wheel_speed_rl: 0.0
+wheel_speed_rr: 0.0
+acceleration_lat: 0.5263868000000006
+acceleration_lon: 0.38283200000000056
+angular_yaw_rate: 0.0
+driver_brake_pressure: 3233.0
+control_brake_pressure: 3233.0

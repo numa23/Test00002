@@ -1,0 +1,45 @@
+import inc.func_ros_sim
+#import inc.hogehoge
+
+#-----------------
+# 単体テスト雰囲気
+#-----------------
+
+work_path = 'C:\Users\csa\Documents\MATLAB\unit_test\csa_unittest'
+node_name = 'multi_topics'
+print(work_path)
+
+#ros_cd_sim(work_path)
+ROSフォルダ指定(work_path)
+ROSノード起動(node_name)
+
+ROSデータ投入("/my_topic", "csa_and_csa_intersection/DriveMode", "test_data/in_mode1.yaml")
+ROSデータ投入("/my_topic2", "honda_msgs/CanInfoAll", "test_data/in_caninfoall1.yaml")
+ROS結果取得("/my_topic3", "test_data/out_mode1_multi1_asis.yaml")
+
+ROSデータ投入("/my_topic", "csa_and_csa_intersection/DriveMode", "test_data/in_mode1.yaml")
+ROS結果取得("/my_topic3", "test_data/out_mode1_multi2_asis.yaml")
+
+ROSノード終了(node_name)
+
+ROS比較除外登録([' nsec:', ' sec:'])
+
+tobe = work_path + '/test_data/out_mode1_multi1_tobe.yaml'
+asis = work_path + '/test_data/out_mode1_multi1_asis.yaml'
+result1 = ROS結果比較(tobe, asis)
+
+tobe = work_path + '/test_data/out_mode1_multi2_tobe.yaml'
+asis = work_path + '/test_data/out_mode1_multi2_asis.yaml'
+result2 = ROS結果比較(tobe, asis)
+
+disp_sub_title('ROS比較結果')
+disp_list(result1)
+disp_list(result2)
+
+
+
+#比較結果1 = ROS結果比較('test_data/out_mode1_multi1_tobe.yaml', test_data/out_mode1_multi1_asis.yaml)
+#比較結果2 = ROS結果比較('test_data/out_mode1_multi2_tobe.yaml', test_data/out_mode1_multi2_asis.yaml)
+
+#disp_list(比較結果1)
+#disp_list(比較結果2)

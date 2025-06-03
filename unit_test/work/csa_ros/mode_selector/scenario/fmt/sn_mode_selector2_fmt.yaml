@@ -1,0 +1,36 @@
+comand:
+  pub select:  $VALUE_01$
+  pub sleep:   $VALUE_02$
+  disp result: $VALUE_03$
+info:
+  case: $CASE$
+  desc: $DESC$
+result_tobe:
+  $HEADER_SEQ$:                           '$VALUE_04$'
+  $HEADER_TIMESTAMP_S$:                   '$VALUE_05$'
+  $HEADER_TIMESTAMP_NS$:                  '$VALUE_06$'
+  $ALERT_ENABLE$:                         '$VALUE_07$'
+yaml_name:
+  - param/mode_selector
+  - input/in_mode_selector_01  # /can/can_info_all
+  - input/in_mode_selector_02  # /can/can_info_all
+param/mode_selector:
+  $BRAKE_THRESHOLD$:                      '$VALUE_08$'
+  $SPEED_THRESHOLD_HIGH$:                 '$VALUE_09$'
+  $SPEED_THRESHOLD_LOW$:                  '$VALUE_10$'
+input/in_mode_selector_01:
+  $HEADER_SEQ$:                           '$VALUE_11$'
+  $HEADER_TIMESTAMP_S$:                   '$VALUE_12$'
+  $HEADER_TIMESTAMP_NS$:                  '$VALUE_13$'
+  $VEHICLE_SPEED$:                        '$VALUE_14$'
+  $THROTTLE$:                             '$VALUE_15$'
+  $DRIVER_BRAKE_PRESSURE$:                '$VALUE_16$'
+  $GEAR$:                                 '$VALUE_17$'
+input/in_mode_selector_02:
+  $HEADER_SEQ2$:                          '$VALUE_18$'
+  $HEADER_TIMESTAMP_S2$:                  '$VALUE_19$'
+  $HEADER_TIMESTAMP_NS2$:                 '$VALUE_20$'
+  $VEHICLE_SPEED2$:                       '$VALUE_21$'
+  $THROTTLE2$:                            '$VALUE_22$'
+  $DRIVER_BRAKE_PRESSURE2$:               '$VALUE_23$'
+  $GEAR2$:                                '$VALUE_24$'

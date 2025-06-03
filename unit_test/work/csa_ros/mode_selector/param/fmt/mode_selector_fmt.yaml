@@ -1,0 +1,3 @@
+brake_threshold: $BRAKE_THRESHOLD$
+speed_threshold_high: $SPEED_THRESHOLD_HIGH$
+speed_threshold_low: $SPEED_THRESHOLD_LOW$

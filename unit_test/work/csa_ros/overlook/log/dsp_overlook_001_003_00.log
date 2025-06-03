@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------
+ P003(001_003_00):attention:False,confidence:0.0 & allow:True,exclude:False
+---------------------------------------------------------------------------
+version:1.0.0
+md5sum:a76d8db685d1e2a6429b471eb935d5cb
+date_time:2023/12/04 17:56:31
+overlook/param/fmt/overlook_fmt.yaml
+exec2:cp overlook/param/overlook.yaml overlook/param/overlook_001_003_00.yaml
+overlook/input/fmt/in_overlook_01_fmt.yaml
+exec2:cp overlook/input/in_overlook_01.yaml overlook/input/in_overlook_01_001_003_00.yaml
+input:{'$OVERLOOKING_THRESHOLD$': '1', '$CONFIDENCE_THRESHOLD$': '0.8'}
+exec:rosnode list
+exec2:pkill ros
+exec2:roscore &
+exec:pgrep -l roscore
+exec:pgrep -l rosmaster
+exec:pgrep -l roscore
+exec:pgrep -l rosmaster
+exec:pgrep -l rosout
+exec2:rosparam load overlook/param/overlook.yaml /csa_and_csa_intersection/overlook
+exec2:rosrun csa_and_csa_intersection overlook_node.py > overlook/log/run_overlook_001_003_00.log 2>&1
+exec2:rostopic echo /risk_estimator/overlook/risks > overlook/output/out_overlook_001_003_00.txt
+exec3:rostopic pub /risk_estimator/attentioned_risks csa_and_csa_intersection/Risks -1 -f overlook/input/in_overlook_01_001_003_00.yaml
+exec:cat overlook/output/out_overlook_001_003_00.txt
+exec:diff -u overlook/report/analysis/out_overlook_001_003_00_tobe.yaml overlook/report/analysis/out_overlook_001_003_00_asis.yaml
+result:start
+result:end
+judge:(o) overlook 001 003 00
+exec:rosnode list
+exec:rosnode kill /overlook
+exec:rosnode kill /rosout
+exec:rosnode kill /rostopic_188165_1701680206478
+exec:rosnode kill /rostopic_188330_1701680204533
+exec2:pkill ros

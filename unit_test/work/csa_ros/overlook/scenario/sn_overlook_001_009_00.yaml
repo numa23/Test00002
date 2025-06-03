@@ -1,0 +1,30 @@
+comand:
+  pub select:  ["01"]
+  pub sleep:   3.0
+  disp result: True
+info:
+  case: P009
+  desc: attention:True,confidence:0.0 & allow:False,exclude:False
+result_tobe:
+  $HEADER_SEQ$:                           '1'
+  $HEADER_TIMESTAMP_S$:                   '1661990400'
+  $HEADER_TIMESTAMP_NS$:                  '000000000'
+  $ATTENTION$:                            'True'
+  $CONFIDENCE$:                           '0.0'
+  $ALLOW_OVERLOOK_ALERT$:                 'False'
+  $EXCLUDE_OVERLOOK_ALERT$:               'False'
+  $OVERLOOK_ALERT$:                       'False'
+yaml_name:
+  - param/overlook
+  - input/in_overlook_01
+param/overlook:
+  $OVERLOOKING_THRESHOLD$:                '1'
+  $CONFIDENCE_THRESHOLD$:                 '0.8'
+input/in_overlook_01:
+  $HEADER_SEQ$:                           '1'
+  $HEADER_TIMESTAMP_S$:                   '1661990400'
+  $HEADER_TIMESTAMP_NS$:                  '000000000'
+  $ATTENTION$:                            'True'
+  $CONFIDENCE$:                           '0.0'
+  $ALLOW_OVERLOOK_ALERT$:                 'False'
+  $EXCLUDE_OVERLOOK_ALERT$:               'False'
