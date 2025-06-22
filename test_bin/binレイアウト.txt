@@ -1,0 +1,26 @@
+ヘッダー部
+0       1       2       3       4       5       6       7       
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aaaaaaaabccddeefgggggggghhhhhhhhyyyyyyyyyyyymmmmdddddhhhhhmmmmmm
+
+aaaaaaaa(8):0x96
+b(1):0 or 1
+cc(2):0～3
+dd(2):0～3
+ee(2):0～3
+f(1):0
+gggggggg(8):'N'
+hhhhhhhh(8):'U'
+yyyyyyyyyyyy(12):2025
+mmmm(4):6
+ddddd(5):23
+hhhhh(5):15
+mmmmmm(6):54
+
+データ部
+0       1       2       3       4       5       6       7       
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aaaaaaaabccddee
+
+
+
